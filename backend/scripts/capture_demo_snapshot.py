@@ -57,6 +57,15 @@ def main() -> None:
     def _note(msg: str) -> None:
         notes.append(msg)
 
+    def grab_text(path: str, params: dict[str, object] | None = None) -> str | None:
+        """Capture a non-JSON endpoint (YAML, CSV) as a plain string."""
+        response = client.get(path, params=params)
+        if response.status_code != 200:
+            misses.append(f"{key_for(path, params)} -> HTTP {response.status_code}")
+            return None
+        snapshot[key_for(path, params)] = response.text
+        return response.text
+
     def grab(path: str, params: dict[str, object] | None = None) -> object | None:
         response = client.get(path, params=params)
         if response.status_code != 200:
@@ -129,6 +138,16 @@ def main() -> None:
     grab("/api/v1/detections/sigma")
     grab("/api/v1/detections/blocklist")
     grab("/api/v1/detections/stix")
+
+    # Text/file downloads. These return YAML and CSV rather than JSON, so they are
+    # stored as strings; the route handler serves a string body verbatim with a
+    # content type inferred from the path. Without these the download buttons 404.
+    grab_text("/api/v1/detections/sigma.yml")
+    # /export/events.csv is deliberately NOT captured. The full export of a
+    # 200k-event dataset is ~23 MB, which would multiply the snapshot tenfold, and
+    # nothing in the console links to it: the report builder writes CSV client-side
+    # from the rows already on screen. Against a live backend the endpoint still
+    # streams normally.
 
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(snapshot, indent=1, default=str), encoding="utf-8")

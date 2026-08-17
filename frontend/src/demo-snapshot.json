@@ -38,29 +38,22 @@
  ],
  "/api/v1/stats/overview?window=24h": {
   "kpi": {
-   "events_24h": 820,
-   "events_7d": 24989,
-   "events_30d": 60095,
+   "events_24h": 793,
+   "events_7d": 24955,
+   "events_30d": 60075,
    "events_all": 216435,
    "active_vps": 2,
    "total_vps": 2,
-   "unique_ips": 239,
+   "unique_ips": 229,
    "cross_vps_ips": 0,
    "known_malicious_ips": 0
   },
   "timeline": [
    {
-    "bucket": "2026-08-16T17:00:00Z",
-    "counts": {
-     "SENSOR-03": 1,
-     "SENSOR-02": 25
-    }
-   },
-   {
     "bucket": "2026-08-16T18:00:00Z",
     "counts": {
      "SENSOR-03": 3,
-     "SENSOR-02": 6
+     "SENSOR-02": 5
     }
    },
    {
@@ -270,20 +263,6 @@
     "coordination_score": 0
    },
    {
-    "ip": "77.90.185.21",
-    "vps_count": 1,
-    "vps_aliases": [
-     "SENSOR-02"
-    ],
-    "total_events": 48,
-    "first_seen_at": "2026-07-13T09:56:37Z",
-    "last_seen_at": "2026-08-17T08:28:40Z",
-    "country_code": "DE",
-    "otx_pulse_count": null,
-    "reputation_score": null,
-    "coordination_score": 0
-   },
-   {
     "ip": "213.209.159.115",
     "vps_count": 1,
     "vps_aliases": [
@@ -292,6 +271,20 @@
     "total_events": 48,
     "first_seen_at": "2026-06-22T19:35:20Z",
     "last_seen_at": "2026-08-17T14:31:18Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "77.90.185.21",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 32,
+    "first_seen_at": "2026-07-13T09:56:37Z",
+    "last_seen_at": "2026-08-17T08:28:40Z",
     "country_code": "DE",
     "otx_pulse_count": null,
     "reputation_score": null,
@@ -343,33 +336,33 @@
   "event_types": [
    {
     "name": "http_scan",
-    "count": 361
+    "count": 354
    },
    {
     "name": "tcp_connect",
-    "count": 288
+    "count": 272
    },
    {
     "name": "ssh_login_attempt",
-    "count": 171
+    "count": 167
    }
   ],
   "protocols": [
    {
     "name": "tcp",
-    "count": 288
+    "count": 272
    },
    {
     "name": "http",
-    "count": 216
+    "count": 213
    },
    {
     "name": "ssh",
-    "count": 171
+    "count": 167
    },
    {
     "name": "https",
-    "count": 145
+    "count": 141
    }
   ],
   "geo": [
@@ -551,7 +544,7 @@
   "top_credentials": [
    {
     "name": "123456",
-    "count": 20
+    "count": 19
    },
    {
     "name": "root",
@@ -593,27 +586,21 @@
  },
  "/api/v1/stats/SENSOR-02?window=24h": {
   "kpi": {
-   "events_24h": 762,
-   "events_7d": 22409,
-   "events_30d": 51572,
+   "events_24h": 736,
+   "events_7d": 22385,
+   "events_30d": 51559,
    "events_all": 129339,
    "active_vps": 2,
    "total_vps": 2,
-   "unique_ips": 202,
+   "unique_ips": 193,
    "cross_vps_ips": 0,
    "known_malicious_ips": 0
   },
   "timeline": [
    {
-    "bucket": "2026-08-16T17:00:00Z",
-    "counts": {
-     "SENSOR-02": 25
-    }
-   },
-   {
     "bucket": "2026-08-16T18:00:00Z",
     "counts": {
-     "SENSOR-02": 6
+     "SENSOR-02": 5
     }
    },
    {
@@ -828,7 +815,7 @@
     "vps_aliases": [
      "SENSOR-02"
     ],
-    "total_events": 48,
+    "total_events": 32,
     "first_seen_at": "2026-07-13T09:56:37Z",
     "last_seen_at": "2026-08-17T08:28:40Z",
     "country_code": "DE",
@@ -882,33 +869,33 @@
   "event_types": [
    {
     "name": "http_scan",
-    "count": 303
+    "count": 297
    },
    {
     "name": "tcp_connect",
-    "count": 288
+    "count": 272
    },
    {
     "name": "ssh_login_attempt",
-    "count": 171
+    "count": 167
    }
   ],
   "protocols": [
    {
     "name": "tcp",
-    "count": 288
+    "count": 272
    },
    {
     "name": "ssh",
-    "count": 171
+    "count": 167
    },
    {
     "name": "http",
-    "count": 158
+    "count": 156
    },
    {
     "name": "https",
-    "count": 145
+    "count": 141
    }
   ],
   "geo": [
@@ -1084,7 +1071,7 @@
   "top_credentials": [
    {
     "name": "123456",
-    "count": 20
+    "count": 19
    },
    {
     "name": "root",
@@ -1099,7 +1086,7 @@
     "count": 4
    },
    {
-    "name": "ALC#FGU",
+    "name": "asdfgh",
     "count": 3
    },
    {
@@ -1111,7 +1098,7 @@
     "count": 3
    },
    {
-    "name": "administrator",
+    "name": "ALC#FGU",
     "count": 3
    },
    {
@@ -1126,23 +1113,17 @@
  },
  "/api/v1/stats/SENSOR-03?window=24h": {
   "kpi": {
-   "events_24h": 58,
-   "events_7d": 2580,
-   "events_30d": 8523,
+   "events_24h": 57,
+   "events_7d": 2570,
+   "events_30d": 8516,
    "events_all": 87096,
    "active_vps": 2,
    "total_vps": 2,
-   "unique_ips": 37,
+   "unique_ips": 36,
    "cross_vps_ips": 0,
    "known_malicious_ips": 0
   },
   "timeline": [
-   {
-    "bucket": "2026-08-16T17:00:00Z",
-    "counts": {
-     "SENSOR-03": 1
-    }
-   },
    {
     "bucket": "2026-08-16T18:00:00Z",
     "counts": {
@@ -1265,20 +1246,6 @@
     "coordination_score": 36
    },
    {
-    "ip": "168.194.164.3",
-    "vps_count": 1,
-    "vps_aliases": [
-     "SENSOR-03"
-    ],
-    "total_events": 3,
-    "first_seen_at": "2026-08-03T12:11:36Z",
-    "last_seen_at": "2026-08-17T11:02:21Z",
-    "country_code": "BR",
-    "otx_pulse_count": null,
-    "reputation_score": null,
-    "coordination_score": 0
-   },
-   {
     "ip": "182.255.46.118",
     "vps_count": 1,
     "vps_aliases": [
@@ -1293,32 +1260,47 @@
     "coordination_score": 0
    },
    {
-    "ip": "134.209.97.194",
+    "ip": "168.194.164.3",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-03"
+    ],
+    "total_events": 3,
+    "first_seen_at": "2026-08-03T12:11:36Z",
+    "last_seen_at": "2026-08-17T11:02:21Z",
+    "country_code": "BR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "47.237.124.132",
     "vps_count": 1,
     "vps_aliases": [
      "SENSOR-03"
     ],
     "total_events": 2,
-    "first_seen_at": "2026-08-17T01:24:24Z",
-    "last_seen_at": "2026-08-17T01:24:24Z",
+    "first_seen_at": "2026-08-17T10:38:42Z",
+    "last_seen_at": "2026-08-17T10:39:35Z",
     "country_code": "SG",
     "otx_pulse_count": null,
     "reputation_score": null,
     "coordination_score": 0
    },
    {
-    "ip": "47.254.240.14",
-    "vps_count": 1,
+    "ip": "45.194.67.26",
+    "vps_count": 2,
     "vps_aliases": [
-     "SENSOR-03"
+     "SENSOR-03",
+     "SENSOR-02"
     ],
     "total_events": 2,
-    "first_seen_at": "2026-08-16T19:04:35Z",
-    "last_seen_at": "2026-08-16T19:04:55Z",
-    "country_code": "MY",
+    "first_seen_at": "2026-07-10T10:46:39Z",
+    "last_seen_at": "2026-08-16T19:05:05Z",
+    "country_code": "BR",
     "otx_pulse_count": null,
     "reputation_score": null,
-    "coordination_score": 0
+    "coordination_score": 48
    },
    {
     "ip": "52.146.20.92",
@@ -1364,31 +1346,30 @@
     "coordination_score": 0
    },
    {
-    "ip": "151.243.11.230",
-    "vps_count": 2,
+    "ip": "203.156.108.111",
+    "vps_count": 1,
     "vps_aliases": [
-     "SENSOR-03",
-     "SENSOR-02"
+     "SENSOR-03"
     ],
     "total_events": 2,
-    "first_seen_at": "2026-07-16T22:59:07Z",
-    "last_seen_at": "2026-08-16T18:18:49Z",
-    "country_code": "DE",
+    "first_seen_at": "2026-08-17T08:40:16Z",
+    "last_seen_at": "2026-08-17T09:20:28Z",
+    "country_code": "TH",
     "otx_pulse_count": null,
     "reputation_score": null,
-    "coordination_score": 35
+    "coordination_score": 0
    }
   ],
   "event_types": [
    {
     "name": "http_scan",
-    "count": 58
+    "count": 57
    }
   ],
   "protocols": [
    {
     "name": "http",
-    "count": 58
+    "count": 57
    }
   ],
   "geo": [
@@ -1565,13 +1546,13 @@
  },
  "/api/v1/stats/overview?window=7d": {
   "kpi": {
-   "events_24h": 820,
-   "events_7d": 24989,
-   "events_30d": 60095,
+   "events_24h": 793,
+   "events_7d": 24955,
+   "events_30d": 60075,
    "events_all": 216435,
    "active_vps": 2,
    "total_vps": 2,
-   "unique_ips": 1479,
+   "unique_ips": 1476,
    "cross_vps_ips": 27,
    "known_malicious_ips": 0
   },
@@ -1579,8 +1560,8 @@
    {
     "bucket": "2026-08-10T00:00:00Z",
     "counts": {
-     "SENSOR-02": 149,
-     "SENSOR-03": 100
+     "SENSOR-02": 125,
+     "SENSOR-03": 90
     }
    },
    {
@@ -1705,20 +1686,6 @@
     "coordination_score": 0
    },
    {
-    "ip": "213.209.159.115",
-    "vps_count": 1,
-    "vps_aliases": [
-     "SENSOR-02"
-    ],
-    "total_events": 368,
-    "first_seen_at": "2026-06-22T19:35:20Z",
-    "last_seen_at": "2026-08-17T14:31:18Z",
-    "country_code": "DE",
-    "otx_pulse_count": null,
-    "reputation_score": null,
-    "coordination_score": 0
-   },
-   {
     "ip": "77.90.185.21",
     "vps_count": 1,
     "vps_aliases": [
@@ -1727,6 +1694,20 @@
     "total_events": 352,
     "first_seen_at": "2026-07-13T09:56:37Z",
     "last_seen_at": "2026-08-17T08:28:40Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "213.209.159.115",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 352,
+    "first_seen_at": "2026-06-22T19:35:20Z",
+    "last_seen_at": "2026-08-17T14:31:18Z",
     "country_code": "DE",
     "otx_pulse_count": null,
     "reputation_score": null,
@@ -1779,33 +1760,33 @@
   "event_types": [
    {
     "name": "ssh_login_attempt",
-    "count": 17182
+    "count": 17179
    },
    {
     "name": "http_scan",
-    "count": 5765
+    "count": 5754
    },
    {
     "name": "tcp_connect",
-    "count": 2042
+    "count": 2022
    }
   ],
   "protocols": [
    {
     "name": "ssh",
-    "count": 17182
+    "count": 17179
    },
    {
     "name": "http",
-    "count": 4739
+    "count": 4729
    },
    {
     "name": "tcp",
-    "count": 2042
+    "count": 2022
    },
    {
     "name": "https",
-    "count": 1026
+    "count": 1025
    }
   ],
   "geo": [
@@ -1987,11 +1968,11 @@
   "top_credentials": [
    {
     "name": "123456",
-    "count": 180
+    "count": 179
    },
    {
     "name": "root",
-    "count": 68
+    "count": 67
    },
    {
     "name": "admin",
@@ -2029,13 +2010,13 @@
  },
  "/api/v1/stats/SENSOR-02?window=7d": {
   "kpi": {
-   "events_24h": 762,
-   "events_7d": 22409,
-   "events_30d": 51572,
+   "events_24h": 736,
+   "events_7d": 22385,
+   "events_30d": 51559,
    "events_all": 129339,
    "active_vps": 2,
    "total_vps": 2,
-   "unique_ips": 1226,
+   "unique_ips": 1225,
    "cross_vps_ips": 27,
    "known_malicious_ips": 0
   },
@@ -2043,7 +2024,7 @@
    {
     "bucket": "2026-08-10T00:00:00Z",
     "counts": {
-     "SENSOR-02": 149
+     "SENSOR-02": 125
     }
    },
    {
@@ -2138,7 +2119,7 @@
     "vps_aliases": [
      "SENSOR-02"
     ],
-    "total_events": 368,
+    "total_events": 352,
     "first_seen_at": "2026-06-22T19:35:20Z",
     "last_seen_at": "2026-08-17T14:31:18Z",
     "country_code": "DE",
@@ -2175,20 +2156,6 @@
     "coordination_score": 0
    },
    {
-    "ip": "65.49.9.172",
-    "vps_count": 1,
-    "vps_aliases": [
-     "SENSOR-02"
-    ],
-    "total_events": 261,
-    "first_seen_at": "2026-08-11T17:20:00Z",
-    "last_seen_at": "2026-08-11T17:26:35Z",
-    "country_code": "US",
-    "otx_pulse_count": null,
-    "reputation_score": null,
-    "coordination_score": 0
-   },
-   {
     "ip": "221.202.188.169",
     "vps_count": 1,
     "vps_aliases": [
@@ -2217,6 +2184,20 @@
     "coordination_score": 0
    },
    {
+    "ip": "65.49.9.172",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 261,
+    "first_seen_at": "2026-08-11T17:20:00Z",
+    "last_seen_at": "2026-08-11T17:26:35Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
     "ip": "45.198.224.228",
     "vps_count": 1,
     "vps_aliases": [
@@ -2234,21 +2215,21 @@
   "event_types": [
    {
     "name": "ssh_login_attempt",
-    "count": 17182
+    "count": 17179
    },
    {
     "name": "http_scan",
-    "count": 3185
+    "count": 3184
    },
    {
     "name": "tcp_connect",
-    "count": 2042
+    "count": 2022
    }
   ],
   "protocols": [
    {
     "name": "ssh",
-    "count": 17182
+    "count": 17179
    },
    {
     "name": "http",
@@ -2256,11 +2237,11 @@
    },
    {
     "name": "tcp",
-    "count": 2042
+    "count": 2022
    },
    {
     "name": "https",
-    "count": 1026
+    "count": 1025
    }
   ],
   "geo": [
@@ -2436,11 +2417,11 @@
   "top_credentials": [
    {
     "name": "123456",
-    "count": 180
+    "count": 179
    },
    {
     "name": "root",
-    "count": 68
+    "count": 67
    },
    {
     "name": "admin",
@@ -2478,13 +2459,13 @@
  },
  "/api/v1/stats/SENSOR-03?window=7d": {
   "kpi": {
-   "events_24h": 58,
-   "events_7d": 2580,
-   "events_30d": 8523,
+   "events_24h": 57,
+   "events_7d": 2570,
+   "events_30d": 8516,
    "events_all": 87096,
    "active_vps": 2,
    "total_vps": 2,
-   "unique_ips": 280,
+   "unique_ips": 278,
    "cross_vps_ips": 27,
    "known_malicious_ips": 0
   },
@@ -2492,7 +2473,7 @@
    {
     "bucket": "2026-08-10T00:00:00Z",
     "counts": {
-     "SENSOR-03": 100
+     "SENSOR-03": 90
     }
    },
    {
@@ -2673,7 +2654,7 @@
      "SENSOR-03",
      "SENSOR-02"
     ],
-    "total_events": 32,
+    "total_events": 28,
     "first_seen_at": "2026-08-01T19:32:10Z",
     "last_seen_at": "2026-08-13T12:32:24Z",
     "country_code": "NL",
@@ -2685,13 +2666,13 @@
   "event_types": [
    {
     "name": "http_scan",
-    "count": 2580
+    "count": 2570
    }
   ],
   "protocols": [
    {
     "name": "http",
-    "count": 2580
+    "count": 2570
    }
   ],
   "geo": [
@@ -2868,13 +2849,13 @@
  },
  "/api/v1/stats/overview?window=30d": {
   "kpi": {
-   "events_24h": 820,
-   "events_7d": 24989,
-   "events_30d": 60095,
+   "events_24h": 793,
+   "events_7d": 24955,
+   "events_30d": 60075,
    "events_all": 216435,
    "active_vps": 2,
    "total_vps": 2,
-   "unique_ips": 4381,
+   "unique_ips": 4371,
    "cross_vps_ips": 195,
    "known_malicious_ips": 0
   },
@@ -2882,8 +2863,8 @@
    {
     "bucket": "2026-07-18T00:00:00Z",
     "counts": {
-     "SENSOR-03": 23,
-     "SENSOR-02": 333
+     "SENSOR-03": 16,
+     "SENSOR-02": 320
     }
    },
    {
@@ -3242,33 +3223,33 @@
   "event_types": [
    {
     "name": "ssh_login_attempt",
-    "count": 31022
+    "count": 31016
    },
    {
     "name": "http_scan",
-    "count": 20040
+    "count": 20029
    },
    {
     "name": "tcp_connect",
-    "count": 9033
+    "count": 9030
    }
   ],
   "protocols": [
    {
     "name": "ssh",
-    "count": 31022
+    "count": 31016
    },
    {
     "name": "http",
-    "count": 16423
+    "count": 16414
    },
    {
     "name": "tcp",
-    "count": 9033
+    "count": 9030
    },
    {
     "name": "https",
-    "count": 3617
+    "count": 3615
    }
   ],
   "geo": [
@@ -3450,7 +3431,7 @@
   "top_credentials": [
    {
     "name": "123456",
-    "count": 910
+    "count": 909
    },
    {
     "name": "root",
@@ -3492,13 +3473,13 @@
  },
  "/api/v1/stats/SENSOR-02?window=30d": {
   "kpi": {
-   "events_24h": 762,
-   "events_7d": 22409,
-   "events_30d": 51572,
+   "events_24h": 736,
+   "events_7d": 22385,
+   "events_30d": 51559,
    "events_all": 129339,
    "active_vps": 2,
    "total_vps": 2,
-   "unique_ips": 3573,
+   "unique_ips": 3570,
    "cross_vps_ips": 195,
    "known_malicious_ips": 0
   },
@@ -3506,7 +3487,7 @@
    {
     "bucket": "2026-07-18T00:00:00Z",
     "counts": {
-     "SENSOR-02": 333
+     "SENSOR-02": 320
     }
    },
    {
@@ -3795,7 +3776,7 @@
     "vps_aliases": [
      "SENSOR-02"
     ],
-    "total_events": 721,
+    "total_events": 720,
     "first_seen_at": "2026-07-03T13:33:41Z",
     "last_seen_at": "2026-08-17T13:03:36Z",
     "country_code": "TR",
@@ -3835,33 +3816,33 @@
   "event_types": [
    {
     "name": "ssh_login_attempt",
-    "count": 31022
+    "count": 31016
    },
    {
     "name": "http_scan",
-    "count": 11517
+    "count": 11513
    },
    {
     "name": "tcp_connect",
-    "count": 9033
+    "count": 9030
    }
   ],
   "protocols": [
    {
     "name": "ssh",
-    "count": 31022
+    "count": 31016
    },
    {
     "name": "tcp",
-    "count": 9033
+    "count": 9030
    },
    {
     "name": "http",
-    "count": 7900
+    "count": 7898
    },
    {
     "name": "https",
-    "count": 3617
+    "count": 3615
    }
   ],
   "geo": [
@@ -4037,7 +4018,7 @@
   "top_credentials": [
    {
     "name": "123456",
-    "count": 910
+    "count": 909
    },
    {
     "name": "root",
@@ -4079,13 +4060,13 @@
  },
  "/api/v1/stats/SENSOR-03?window=30d": {
   "kpi": {
-   "events_24h": 58,
-   "events_7d": 2580,
-   "events_30d": 8523,
+   "events_24h": 57,
+   "events_7d": 2570,
+   "events_30d": 8516,
    "events_all": 87096,
    "active_vps": 2,
    "total_vps": 2,
-   "unique_ips": 1003,
+   "unique_ips": 996,
    "cross_vps_ips": 195,
    "known_malicious_ips": 0
   },
@@ -4093,7 +4074,7 @@
    {
     "bucket": "2026-07-18T00:00:00Z",
     "counts": {
-     "SENSOR-03": 23
+     "SENSOR-03": 16
     }
    },
    {
@@ -4423,13 +4404,13 @@
   "event_types": [
    {
     "name": "http_scan",
-    "count": 8523
+    "count": 8516
    }
   ],
   "protocols": [
    {
     "name": "http",
-    "count": 8523
+    "count": 8516
    }
   ],
   "geo": [
@@ -4606,9 +4587,9 @@
  },
  "/api/v1/stats/overview?window=all": {
   "kpi": {
-   "events_24h": 820,
-   "events_7d": 24989,
-   "events_30d": 60095,
+   "events_24h": 793,
+   "events_7d": 24955,
+   "events_30d": 60075,
    "events_all": 216435,
    "active_vps": 2,
    "total_vps": 2,
@@ -5517,9 +5498,9 @@
  },
  "/api/v1/stats/SENSOR-02?window=all": {
   "kpi": {
-   "events_24h": 762,
-   "events_7d": 22409,
-   "events_30d": 51572,
+   "events_24h": 736,
+   "events_7d": 22385,
+   "events_30d": 51559,
    "events_all": 129339,
    "active_vps": 2,
    "total_vps": 2,
@@ -6243,9 +6224,9 @@
  },
  "/api/v1/stats/SENSOR-03?window=all": {
   "kpi": {
-   "events_24h": 58,
-   "events_7d": 2580,
-   "events_30d": 8523,
+   "events_24h": 57,
+   "events_7d": 2570,
+   "events_30d": 8516,
    "events_all": 87096,
    "active_vps": 2,
    "total_vps": 2,
@@ -95516,5 +95497,6 @@
     ]
    }
   ]
- }
+ },
+ "/api/v1/detections/sigma.yml": "# 23 Sigma rule(s) generated from honeypot telemetry.\n# Each rule carries a trapline_evidence block recording what it was derived from.\n\n---\ntitle: 'Post-compromise shell activity: Resource hijacking (cryptomining)'\nid: 04013c1e-76f9-5262-a0f1-3e2710fa27ba\nstatus: experimental\ndescription: Shell commands observed on the honeypot fleet corresponding to the act phase of the attack\n  lifecycle, specifically resource hijacking (cryptomining). Derived from 23 command events across 15\n  distinct source addresses.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.impact\n- attack.t1496\nlogsource:\n  category: process_creation\n  product: linux\ndetection:\n  selection:\n    CommandLine|contains:\n    - \"{\\\"id\\\":1,\\\"method\\\":\\\"mining.subscribe\\\",\\\"params\\\":[]}\\r\\n\"\n    - '{\"id\":1,\"jsonrpc\":\"2.0\",\"method\":\"login\",\"params\":{\"login\":\"YOUR_WALLET_ADDRESS\",\"pass\":\"x\",\"agent\":\"XMRig/6.2'\n    - ps -ef | grep '[Mm]iner'\n    - command -v kill 2>&1 || echo command not found\n  condition: selection\nfalsepositives:\n- Legitimate configuration management\nlevel: critical\ntrapline_evidence:\n  events: 23\n  source_addresses: 15\n  attck: T1496\n  example_commands:\n  - \"{\\\"id\\\":1,\\\"method\\\":\\\"mining.subscribe\\\",\\\"params\\\":[]}\\r\\n\"\n  - '{\"id\":1,\"jsonrpc\":\"2.0\",\"method\":\"login\",\"params\":{\"login\":\"YOUR_WALLET_ADDRESS\",\"pass\":\"x\",\"agent\":\"XMRig/6.2'\n  - ps -ef | grep '[Mm]iner'\n  - command -v kill 2>&1 || echo command not found\n  techniques:\n  - attck: T1496\n    label: Resource hijacking (cryptomining)\n    count: 16\n  - attck: T1057\n    label: Process discovery or termination\n    count: 7\n\n---\ntitle: Source addresses showing coordinated multi-sensor activity\nid: 077cfaeb-8e40-5940-b8e9-f6c53122ddb8\nstatus: experimental\ndescription: 'Addresses observed on more than one independent sensor within a short window, in an ordered\n  sequence or near-simultaneously. The timing shape distinguishes a directed sweep from ordinary background\n  scanning: 31 sweeps and 1 parallel arrivals out of 867 multi-sensor addresses.'\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.reconnaissance\n- attack.t1595.001\nlogsource:\n  category: firewall\ndetection:\n  selection:\n    src_ip:\n    - 45.198.224.5\n    - 45.148.10.200\n    - 93.123.72.183\n    - 31.59.160.12\n    - 45.148.10.125\n    - 204.76.203.206\n    - 204.76.203.219\n    - 5.61.209.92\n    - 94.154.43.243\n  condition: selection\nfalsepositives:\n- Security scanning services and research crawlers that survey wide ranges\nlevel: high\ntrapline_evidence:\n  multi_sensor_addresses: 867\n  verdicts:\n    background scanning: 664\n    recurring visitor: 171\n    sequential sweep: 31\n    parallel (distributed): 1\n  examples:\n  - ip: 45.198.224.5\n    order:\n    - SENSOR-03\n    - SENSOR-02\n    max_lag_seconds: 16489\n    events: 2075\n  - ip: 45.148.10.200\n    order:\n    - SENSOR-02\n    - SENSOR-03\n    max_lag_seconds: 66889\n    events: 493\n  - ip: 93.123.72.183\n    order:\n    - SENSOR-03\n    - SENSOR-02\n    max_lag_seconds: 46206\n    events: 362\n  - ip: 31.59.160.12\n    order:\n    - SENSOR-03\n    - SENSOR-02\n    max_lag_seconds: 52255\n    events: 211\n  - ip: 45.148.10.125\n    order:\n    - SENSOR-03\n    - SENSOR-02\n    max_lag_seconds: 15064\n    events: 200\n  - ip: 204.76.203.206\n    order:\n    - SENSOR-03\n    - SENSOR-02\n    max_lag_seconds: 48624\n    events: 165\n  - ip: 204.76.203.219\n    order:\n    - SENSOR-03\n    - SENSOR-02\n    max_lag_seconds: 36575\n    events: 150\n  - ip: 5.61.209.92\n    order:\n    - SENSOR-03\n    - SENSOR-02\n    max_lag_seconds: 42141\n    events: 114\n  - ip: 94.154.43.243\n    order:\n    - SENSOR-03\n    - SENSOR-02\n    max_lag_seconds: 58062\n    events: 50\n\n---\ntitle: 'Post-compromise shell activity: Sudo abuse using a guessed password'\nid: 6fd72145-2a45-5055-9c18-f0b6e542cdf3\nstatus: experimental\ndescription: Shell commands observed on the honeypot fleet corresponding to the escalate phase of the\n  attack lifecycle, specifically sudo abuse using a guessed password. Derived from 180 command events\n  across 8 distinct source addresses.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.privilege_escalation\n- attack.t1548.003\nlogsource:\n  category: process_creation\n  product: linux\ndetection:\n  selection:\n    CommandLine|contains:\n    - echo 'qwerty' | sudo -S bash -c '(echo '\"'\"'echo sicc'\"'\"' > filter.sh && chmod +x filter.sh &&\n      ./filter.sh) 2\n    - 'echo ''jenkins'' | sudo -S bash -c ''[ \"$(ls -d /proc/[0-9]* 2>/dev/null | wc -l)\" -lt 15 ] &&\n      echo 0 || echo 1'' '\n    - echo 'admin' | sudo -S bash -c '[ \"$(ls -d /proc/[0-9]* 2>/dev/null | wc -l)\" -lt 15 ] && echo 0\n      || echo 1' ||\n    - echo 'admin' | sudo -S bash -c '(echo '\"'\"'echo sicc'\"'\"' > filter.sh && chmod +x filter.sh && ./filter.sh)\n      2>\n    - echo 'qwerty' | sudo -S bash -c 'cd . >/dev/null 2>&1 && echo 1 || echo 0' || bash -c 'cd . >/dev/null\n      2>&1 &&\n    - echo '123456' | sudo -S bash -c '(echo '\"'\"'echo sicc'\"'\"' > filter.sh && chmod +x filter.sh &&\n      ./filter.sh) 2\n    - echo '123456' | sudo -S bash -c 'cd . >/dev/null 2>&1 && echo 1 || echo 0' || bash -c 'cd . >/dev/null\n      2>&1 &&\n    - echo 'root' | sudo -S bash -c 'cd . >/dev/null 2>&1 && echo 1 || echo 0' || bash -c 'cd . >/dev/null\n      2>&1 && e\n  condition: selection\nfalsepositives:\n- Legitimate configuration management\nlevel: high\ntrapline_evidence:\n  events: 180\n  source_addresses: 8\n  attck: T1548.003\n  example_commands:\n  - echo 'qwerty' | sudo -S bash -c '(echo '\"'\"'echo sicc'\"'\"' > filter.sh && chmod +x filter.sh && ./filter.sh)\n    2\n  - 'echo ''jenkins'' | sudo -S bash -c ''[ \"$(ls -d /proc/[0-9]* 2>/dev/null | wc -l)\" -lt 15 ] && echo\n    0 || echo 1'' '\n  - echo 'admin' | sudo -S bash -c '[ \"$(ls -d /proc/[0-9]* 2>/dev/null | wc -l)\" -lt 15 ] && echo 0 ||\n    echo 1' ||\n  - echo 'admin' | sudo -S bash -c '(echo '\"'\"'echo sicc'\"'\"' > filter.sh && chmod +x filter.sh && ./filter.sh)\n    2>\n  - echo 'qwerty' | sudo -S bash -c 'cd . >/dev/null 2>&1 && echo 1 || echo 0' || bash -c 'cd . >/dev/null\n    2>&1 &&\n  - echo '123456' | sudo -S bash -c '(echo '\"'\"'echo sicc'\"'\"' > filter.sh && chmod +x filter.sh && ./filter.sh)\n    2\n  - echo '123456' | sudo -S bash -c 'cd . >/dev/null 2>&1 && echo 1 || echo 0' || bash -c 'cd . >/dev/null\n    2>&1 &&\n  - echo 'root' | sudo -S bash -c 'cd . >/dev/null 2>&1 && echo 1 || echo 0' || bash -c 'cd . >/dev/null\n    2>&1 && e\n  techniques:\n  - attck: T1548.003\n    label: Sudo abuse using a guessed password\n    count: 180\n\n---\ntitle: 'Post-compromise shell activity: Ingress tool transfer'\nid: 43ff0a1c-225d-5a12-bb6b-a513fe8ed3a1\nstatus: experimental\ndescription: Shell commands observed on the honeypot fleet corresponding to the fetch payload phase of\n  the attack lifecycle, specifically ingress tool transfer. Derived from 21 command events across 18 distinct\n  source addresses.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.command_and_control\n- attack.t1105\nlogsource:\n  category: process_creation\n  product: linux\ndetection:\n  selection:\n    CommandLine|contains:\n    - \"GET / HTTP/1.1\\r\\nUser-Agent: curl/7.29.0\\r\\nHost: 158.69.63.177\\r\\nAccept: */*\\r\\n\\r\\n\"\n    - \"GET / HTTP/1.1\\r\\nHost: 158.69.63.177:3306\\r\\nUser-Agent: curl/7.64.1\\r\\nAccept: */*\\r\\n\\r\\n\"\n    - curl -s --max-time 3 ipinfo.io/org\n  condition: selection\nfalsepositives:\n- Legitimate configuration management\nlevel: high\ntrapline_evidence:\n  events: 21\n  source_addresses: 18\n  attck: T1105\n  example_commands:\n  - \"GET / HTTP/1.1\\r\\nUser-Agent: curl/7.29.0\\r\\nHost: 158.69.63.177\\r\\nAccept: */*\\r\\n\\r\\n\"\n  - \"GET / HTTP/1.1\\r\\nHost: 158.69.63.177:3306\\r\\nUser-Agent: curl/7.64.1\\r\\nAccept: */*\\r\\n\\r\\n\"\n  - curl -s --max-time 3 ipinfo.io/org\n  techniques:\n  - attck: T1105\n    label: Ingress tool transfer\n    count: 21\n\n---\ntitle: 'Post-compromise shell activity: SSH authorized-keys persistence'\nid: 56cee252-a9a3-523d-b8b8-ba98a79cc190\nstatus: experimental\ndescription: Shell commands observed on the honeypot fleet corresponding to the persist phase of the attack\n  lifecycle, specifically ssh authorized-keys persistence. Derived from 106 command events across 36 distinct\n  source addresses.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.persistence\n- attack.t1098.004\nlogsource:\n  category: process_creation\n  product: linux\ndetection:\n  selection:\n    CommandLine|contains:\n    - echo 'root:changemeNOW' | sudo chpasswd\n    - cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8d\n  condition: selection\nfalsepositives:\n- Legitimate configuration management\nlevel: high\ntrapline_evidence:\n  events: 106\n  source_addresses: 36\n  attck: T1098.004\n  example_commands:\n  - echo 'root:changemeNOW' | sudo chpasswd\n  - cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8d\n  techniques:\n  - attck: T1098.004\n    label: SSH authorized-keys persistence\n    count: 61\n  - attck: T1098\n    label: Account manipulation\n    count: 45\n\n---\ntitle: Interactive SSH client against an unattended service\nid: 03334e00-f2b6-5283-9a51-c328c61501bd\nstatus: experimental\ndescription: SSH client banners belonging to interactive GUI clients, which indicate a human at a keyboard\n  rather than a script. Observed on 1,881 events from 39 addresses, 1.54% of fingerprinted traffic. On\n  a service that should only ever see automation, this is worth escalating.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.initial_access\n- attack.t1078\nlogsource:\n  category: network_connection\n  service: ssh\ndetection:\n  selection:\n    client_version|contains:\n    - SSH-2.0-PuTTY_Release_0.84\n    - SSH-2.0-OpenSSH_for_Windows_9.5\n    - SSH-2.0-PuTTY_Release_0.70\n    - SSH-2.0-PuTTY_Local:_May_14_2009_21:12:18\n    - SSH-2.0-PuTTY_KiTTY\n  condition: selection\nfalsepositives:\n- Administrators connecting by hand from a workstation\nlevel: high\ntrapline_evidence:\n  events: 1881\n  source_addresses: 39\n  share_percent: 1.54\n  clients:\n  - SSH-2.0-PuTTY_Release_0.84\n  - SSH-2.0-OpenSSH_for_Windows_9.5\n  - SSH-2.0-PuTTY_Release_0.70\n  - SSH-2.0-PuTTY_Local:_May_14_2009_21:12:18\n  - SSH-2.0-PuTTY_KiTTY\n\n---\ntitle: 'Post-compromise shell activity: Removing file immutability to enable tampering'\nid: cc333e2c-b641-5173-92c0-f3b1488c7cd8\nstatus: experimental\ndescription: Shell commands observed on the honeypot fleet corresponding to the prepare host phase of\n  the attack lifecycle, specifically removing file immutability to enable tampering. Derived from 76 command\n  events across 21 distinct source addresses.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.defense_evasion\n- attack.t1222\nlogsource:\n  category: process_creation\n  product: linux\ndetection:\n  selection:\n    CommandLine|contains:\n    - cd ~; chattr -ia .ssh; lockr -ia .ssh\n  condition: selection\nfalsepositives:\n- Legitimate configuration management\nlevel: medium\ntrapline_evidence:\n  events: 76\n  source_addresses: 21\n  attck: T1222\n  example_commands:\n  - cd ~; chattr -ia .ssh; lockr -ia .ssh\n  techniques:\n  - attck: T1222\n    label: Removing file immutability to enable tampering\n    count: 76\n\n---\ntitle: \"Shared credential ladder '\\uFEFF------fuck' observed from 58 sources\"\nid: 8ba4260d-addb-5e3a-a31f-338bec7dc4d6\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 58 distinct source addresses across\n  the honeypot fleet, over a ladder of 25 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - \"\\uFEFF------fuck------\"\n    - root123456\n    - h3c.com!\n    - 5nWt3P-fF4WosQm5O\n    - Test@2022\n    - Pai=3.1415\n    - Tcdn@2007\n    - '19951995'\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 58\n  example_addresses:\n  - 1.95.155.126\n  - 14.116.150.36\n  - 14.116.184.171\n  - 23.94.237.212\n  - 23.236.64.230\n  - 27.0.135.6\n  - 27.156.98.194\n  - 27.185.75.194\n  - 31.184.215.22\n  - 36.133.118.11\n  ladder_length: 25\n  ladder_prefix:\n  - \"\\uFEFF------fuck------\"\n  - root123456\n  - h3c.com!\n  - 5nWt3P-fF4WosQm5O\n  - Test@2022\n  - Pai=3.1415\n  - Tcdn@2007\n  - '19951995'\n\n---\ntitle: Shared credential ladder 'orangepi' observed from 56 sources\nid: 8f8bb0d3-5f98-5305-9466-69f3cc7cabfb\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 56 distinct source addresses across\n  the honeypot fleet, over a ladder of 5 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - admin\n    - orangepi\n    - P\n    - password\n    - root\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 56\n  example_addresses:\n  - 5.129.247.215\n  - 5.182.26.69\n  - 5.202.4.89\n  - 8.209.254.243\n  - 8.213.129.95\n  - 8.213.229.126\n  - 8.219.230.217\n  - 31.70.71.228\n  - 38.55.97.143\n  - 43.110.38.5\n  ladder_length: 5\n  ladder_prefix:\n  - admin\n  - orangepi\n  - P\n  - password\n  - root\n\n---\ntitle: Shared credential ladder 'fjbdfdjkdsfs541544AA@@' observed from 6 sources\nid: ac67cfab-f515-5786-b364-ccd80882cdef\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 6 distinct source addresses across\n  the honeypot fleet, over a ladder of 5 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - '---fuck_you----'\n    - fjbdfdjkdsfs541544@@\n    - fjbdfdjkdsfs541544AA@@\n    - fjbdfdjkdsfs541544\n    - '123456'\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 6\n  example_addresses:\n  - 111.23.129.238\n  - 159.89.162.48\n  - 218.201.39.70\n  - 220.154.130.30\n  - 220.184.71.196\n  - 223.166.28.151\n  ladder_length: 5\n  ladder_prefix:\n  - '---fuck_you----'\n  - fjbdfdjkdsfs541544@@\n  - fjbdfdjkdsfs541544AA@@\n  - fjbdfdjkdsfs541544\n  - '123456'\n\n---\ntitle: Shared credential ladder 'orangepi' observed from 5 sources\nid: 754499a2-c151-5c98-b2f8-69efbc733072\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 5 distinct source addresses across\n  the honeypot fleet, over a ladder of 25 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - admin\n    - orangepi\n    - P\n    - password\n    - root\n    - admin\n    - orangepi\n    - P\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 5\n  example_addresses:\n  - 8.208.44.152\n  - 47.77.182.54\n  - 47.252.16.44\n  - 47.253.5.130\n  - 104.236.83.40\n  ladder_length: 25\n  ladder_prefix:\n  - admin\n  - orangepi\n  - P\n  - password\n  - root\n  - admin\n  - orangepi\n  - P\n\n---\ntitle: \"Shared credential ladder '\\uFEFF------fuck' observed from 4 sources\"\nid: 9a59cb4a-7353-5b17-b8ff-1d62d4a197e1\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 4 distinct source addresses across\n  the honeypot fleet, over a ladder of 5 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - \"\\uFEFF------fuck------\"\n    - root123456\n    - h3c.com!\n    - 5nWt3P-fF4WosQm5O\n    - Test@2022\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 4\n  example_addresses:\n  - 27.0.135.12\n  - 61.162.234.23\n  - 111.26.149.111\n  - 217.154.62.224\n  ladder_length: 5\n  ladder_prefix:\n  - \"\\uFEFF------fuck------\"\n  - root123456\n  - h3c.com!\n  - 5nWt3P-fF4WosQm5O\n  - Test@2022\n\n---\ntitle: Shared credential ladder 'fuck_you' observed from 4 sources\nid: f918bbf2-2d5e-5ce8-b8cd-f0a34b44e699\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 4 distinct source addresses across\n  the honeypot fleet, over a ladder of 4 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - '---fuck_you----'\n    - '123456'\n    - '---fuck_you----'\n    - '123456'\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 4\n  example_addresses:\n  - 121.29.5.231\n  - 182.92.158.141\n  - 182.92.236.135\n  - 182.92.238.201\n  ladder_length: 4\n  ladder_prefix:\n  - '---fuck_you----'\n  - '123456'\n  - '---fuck_you----'\n  - '123456'\n\n---\ntitle: Shared credential ladder '123456789' observed from 3 sources\nid: 4129886c-a5f9-5bc0-bce3-19e41ddbfbbd\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 3 distinct source addresses across\n  the honeypot fleet, over a ladder of 25 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - '!root'\n    - '111111'\n    - '123123'\n    - '1234'\n    - '12345'\n    - '123456'\n    - '12345678'\n    - '123456789'\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 3\n  example_addresses:\n  - 91.92.40.12\n  - 91.92.40.240\n  - 193.32.162.84\n  ladder_length: 25\n  ladder_prefix:\n  - '!root'\n  - '111111'\n  - '123123'\n  - '1234'\n  - '12345'\n  - '123456'\n  - '12345678'\n  - '123456789'\n\n---\ntitle: Shared credential ladder 'support' observed from 3 sources\nid: 241d2120-da7b-55c1-b271-e5b0409536fe\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 3 distinct source addresses across\n  the honeypot fleet, over a ladder of 25 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - support\n    - support\n    - support\n    - support\n    - support\n    - support\n    - support\n    - support\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 3\n  example_addresses:\n  - 176.65.139.11\n  - 176.65.139.56\n  - 193.32.162.76\n  ladder_length: 25\n  ladder_prefix:\n  - support\n  - support\n  - support\n  - support\n  - support\n  - support\n  - support\n  - support\n\n---\ntitle: Shared credential ladder 'ubuntu' observed from 3 sources\nid: d6f46686-a239-5d72-be64-ae6ef5e41d97\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 3 distinct source addresses across\n  the honeypot fleet, over a ladder of 15 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - ubuntu\n    - debian\n    - centos\n    - linux\n    - nginx\n    - mysql\n    - apache\n    - docker\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 3\n  example_addresses:\n  - 114.248.8.47\n  - 158.51.96.38\n  - 217.160.162.192\n  ladder_length: 15\n  ladder_prefix:\n  - ubuntu\n  - debian\n  - centos\n  - linux\n  - nginx\n  - mysql\n  - apache\n  - docker\n\n---\ntitle: Shared credential ladder 'orangepi' observed from 3 sources\nid: 12b68d97-7415-5897-bc6d-82135ce7e91f\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 3 distinct source addresses across\n  the honeypot fleet, over a ladder of 10 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - admin\n    - orangepi\n    - P\n    - password\n    - root\n    - admin\n    - orangepi\n    - P\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 3\n  example_addresses:\n  - 64.227.0.95\n  - 125.20.210.182\n  - 161.35.169.21\n  ladder_length: 10\n  ladder_prefix:\n  - admin\n  - orangepi\n  - P\n  - password\n  - root\n  - admin\n  - orangepi\n  - P\n\n---\ntitle: \"Shared credential ladder '\\uFEFF------fuck' observed from 3 sources\"\nid: 51e7fdce-732f-52cd-a4e1-2dc8cd4e00be\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 3 distinct source addresses across\n  the honeypot fleet, over a ladder of 8 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - \"\\uFEFF------fuck------\"\n    - root123456\n    - h3c.com!\n    - 5nWt3P-fF4WosQm5O\n    - Test@2022\n    - Pai=3.1415\n    - Tcdn@2007\n    - '19951995'\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 3\n  example_addresses:\n  - 117.67.200.98\n  - 180.76.137.29\n  - 180.76.240.235\n  ladder_length: 8\n  ladder_prefix:\n  - \"\\uFEFF------fuck------\"\n  - root123456\n  - h3c.com!\n  - 5nWt3P-fF4WosQm5O\n  - Test@2022\n  - Pai=3.1415\n  - Tcdn@2007\n  - '19951995'\n\n---\ntitle: \"Shared credential ladder '\\uFEFF------fuck' observed from 3 sources\"\nid: e53a3c78-625e-55af-b228-f71b8c14f295\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 3 distinct source addresses across\n  the honeypot fleet, over a ladder of 4 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - \"\\uFEFF------fuck------\"\n    - root123456\n    - h3c.com!\n    - 5nWt3P-fF4WosQm5O\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 3\n  example_addresses:\n  - 103.163.47.109\n  - 106.75.216.134\n  - 111.228.0.205\n  ladder_length: 4\n  ladder_prefix:\n  - \"\\uFEFF------fuck------\"\n  - root123456\n  - h3c.com!\n  - 5nWt3P-fF4WosQm5O\n\n---\ntitle: Shared credential ladder 'orangepi' observed from 3 sources\nid: d3ddd404-0c14-5465-9b57-4ea7271c7359\nstatus: experimental\ndescription: An identical ordered password sequence was attempted by 3 distinct source addresses across\n  the honeypot fleet, over a ladder of 4 steps. The same wordlist in the same order indicates the same\n  tooling rather than independent activity, so this matches the tool rather than any single actor.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.credential_access\n- attack.t1110.001\nlogsource:\n  category: authentication\ndetection:\n  selection:\n    password|contains:\n    - admin\n    - orangepi\n    - P\n    - password\n  condition: selection\nfalsepositives:\n- Password-strength auditing or red-team exercises using public wordlists\nlevel: medium\ntrapline_evidence:\n  source_addresses: 3\n  example_addresses:\n  - 151.252.107.59\n  - 154.92.23.249\n  - 185.126.5.240\n  ladder_length: 4\n  ladder_prefix:\n  - admin\n  - orangepi\n  - P\n  - password\n\n---\ntitle: Web application probing of management endpoints\nid: fdf64b75-cd95-5515-8848-6ef1549b6111\nstatus: experimental\ndescription: HTTP request paths probed against the honeypot fleet, dominated by application management\n  interfaces. Derived from 25,443 recorded HTTP events.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.reconnaissance\n- attack.t1595.002\n- attack.t1190\nlogsource:\n  category: webserver\ndetection:\n  selection:\n    cs-uri-stem|contains:\n    - /manager/html\n    - /manager/text/list\n    - /admin.zip\n    - /Mob.zip\n    - /Marketfeed.zip\n    - /IIFLInsurance.zip\n    - /MFOnline.zip\n    - /SDK/webLanguage\n    - /login\n    - /file=Unauthorized\n    - /component_server\n    - /robots.txt\n  condition: selection\nfalsepositives:\n- Legitimate administrative access to management consoles\nlevel: medium\ntrapline_evidence:\n  http_events: 25443\n  paths:\n  - /manager/html\n  - /manager/text/list\n  - /admin.zip\n  - /Mob.zip\n  - /Marketfeed.zip\n  - /IIFLInsurance.zip\n  - /MFOnline.zip\n  - /SDK/webLanguage\n  - /login\n  - /file=Unauthorized\n  - /component_server\n  - /robots.txt\n\n---\ntitle: 'Post-compromise shell activity: System information discovery'\nid: d6b7f321-07d1-5ad0-aa9f-d61800c470e7\nstatus: experimental\ndescription: Shell commands observed on the honeypot fleet corresponding to the profile host phase of\n  the attack lifecycle, specifically system information discovery. Derived from 10,465 command events\n  across 215 distinct source addresses.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.discovery\n- attack.t1082\nlogsource:\n  category: process_creation\n  product: linux\ndetection:\n  selection:\n    CommandLine|contains:\n    - 'echo ''qwerty'' | sudo -S bash -c ''m=0; while read k v r; do [ \"$k\" = MemTotal: ] && { m=$v; break;\n      }; done < /p'\n    - 'echo ''qwerty'' | sudo -S bash -c ''nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || busybox\n      nproc 2>/dev/null '\n    - uname -s -m\n    - uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2\" \"$3 }'\n    - cat /proc/cpuinfo | grep name | wc -l\n    - 'echo ''123456'' | sudo -S bash -c ''nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || busybox\n      nproc 2>/dev/null '\n    - uname -a\n    - 'echo ''123456'' | sudo -S bash -c ''m=0; while read k v r; do [ \"$k\" = MemTotal: ] && { m=$v; break;\n      }; done < /p'\n  condition: selection\nfalsepositives:\n- Routine system administration and inventory collection\nlevel: low\ntrapline_evidence:\n  events: 10465\n  source_addresses: 215\n  attck: T1082\n  example_commands:\n  - 'echo ''qwerty'' | sudo -S bash -c ''m=0; while read k v r; do [ \"$k\" = MemTotal: ] && { m=$v; break;\n    }; done < /p'\n  - 'echo ''qwerty'' | sudo -S bash -c ''nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || busybox nproc\n    2>/dev/null '\n  - uname -s -m\n  - uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2\" \"$3 }'\n  - cat /proc/cpuinfo | grep name | wc -l\n  - 'echo ''123456'' | sudo -S bash -c ''nproc 2>/dev/null || /usr/bin/nproc 2>/dev/null || busybox nproc\n    2>/dev/null '\n  - uname -a\n  - 'echo ''123456'' | sudo -S bash -c ''m=0; while read k v r; do [ \"$k\" = MemTotal: ] && { m=$v; break;\n    }; done < /p'\n  techniques:\n  - attck: T1082\n    label: System information discovery\n    count: 5330\n  - attck: T1082\n    label: CPU enumeration (cryptomining reconnaissance)\n    count: 2358\n  - attck: T1082\n    label: Uptime discovery\n    count: 2106\n  - attck: T1082\n    label: GPU enumeration (cryptomining reconnaissance)\n    count: 370\n  - attck: T1082\n    label: Memory enumeration\n    count: 213\n  - attck: T1082\n    label: Shell capability probe\n    count: 88\n\n---\ntitle: SSH connection from a scripted client library\nid: 3d57fb15-a332-5472-a582-c8a4ae754fa7\nstatus: experimental\ndescription: SSH client version strings belonging to programming libraries rather than interactive clients.\n  Observed on 115,403 events from 616 addresses, 94.24% of all fingerprinted traffic. Legitimate automation\n  also uses these libraries, so this is a triage signal rather than a finding on its own.\nauthor: Trapline (honeypot-derived)\ndate: 2026/08/17\ntags:\n- attack.reconnaissance\n- attack.t1595\nlogsource:\n  category: network_connection\n  service: ssh\ndetection:\n  selection:\n    client_version|contains:\n    - SSH-2.0-Go\n    - SSH-2.0-libssh_0.9.6\n    - SSH-2.0-libssh2_1.11.1\n    - SSH-2.0-libssh_0.11.4\n    - SSH-2.0-AsyncSSH_2.1.0\n    - SSH-2.0-libssh_0.10.6\n    - SSH-2.0-libssh2_1.11.2_DEV\n    - SSH-2.0-paramiko_2.7.2\n    - SSH-2.0-libssh2_1.9.0\n    - SSH-2.0-phpseclib_1.0 (openssl)\n    - SSH-2.0-russh_0.51.1\n    - SSH-2.0-libssh_0.7.4\n  condition: selection\nfalsepositives:\n- Legitimate automation, CI runners, backup jobs and orchestration tools\nlevel: low\ntrapline_evidence:\n  events: 115403\n  source_addresses: 616\n  share_percent: 94.24\n  clients:\n  - SSH-2.0-Go\n  - SSH-2.0-libssh_0.9.6\n  - SSH-2.0-libssh2_1.11.1\n  - SSH-2.0-libssh_0.11.4\n  - SSH-2.0-AsyncSSH_2.1.0\n  - SSH-2.0-libssh_0.10.6\n  - SSH-2.0-libssh2_1.11.2_DEV\n  - SSH-2.0-paramiko_2.7.2\n  - SSH-2.0-libssh2_1.9.0\n  - SSH-2.0-phpseclib_1.0 (openssl)\n  - SSH-2.0-russh_0.51.1\n  - SSH-2.0-libssh_0.7.4\n"
 }

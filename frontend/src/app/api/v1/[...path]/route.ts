@@ -75,9 +75,31 @@ export async function GET(
     );
   }
 
-  return NextResponse.json(body, {
-    headers: { "Cache-Control": "public, max-age=60, stale-while-revalidate=600" },
-  });
+  const cache = "public, max-age=60, stale-while-revalidate=600";
+
+  // A string body is a captured file download (YAML, CSV) rather than an API
+  // response. Serve it verbatim with a content type and filename derived from the
+  // path, so the download buttons behave the same as against a live backend.
+  if (typeof body === "string") {
+    const name = path.split("/").pop() || "download";
+    const ext = name.split(".").pop()?.toLowerCase();
+    const types: Record<string, string> = {
+      yml: "text/yaml",
+      yaml: "text/yaml",
+      csv: "text/csv",
+      txt: "text/plain",
+    };
+    const filename = ext === "yml" || ext === "yaml" ? "trapline-sigma.yml" : name;
+    return new NextResponse(body, {
+      headers: {
+        "Content-Type": `${types[ext ?? ""] ?? "text/plain"}; charset=utf-8`,
+        "Content-Disposition": `attachment; filename="${filename}"`,
+        "Cache-Control": cache,
+      },
+    });
+  }
+
+  return NextResponse.json(body, { headers: { "Cache-Control": cache } });
 }
 
 /** Sensor registration writes state, which a snapshot cannot do. Say so plainly. */
