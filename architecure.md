@@ -2,19 +2,29 @@
 
 ## 0. Context & Sources
 
-Three existing Trapline deployments will feed the central platform initially:
+The reference deployment this design was written against is a three-sensor fleet. Sensors differ in
+how they present and store their own data, which is the integration problem this platform exists to
+absorb:
 
-| VPS Alias | Endpoint | Frontend | Backend | Honeypot Engine | DB |
-|---|---|---|---|---|---|
-| SENSOR-01 | http://192.0.2.11:9999/ | HTML/CSS/JS | FastAPI | Beelzebub (Go) | file-based |
-| SENSOR-02 | http://198.51.100.22:9999/ | HTML/CSS/JS | FastAPI | Beelzebub (Go) | file-based |
-| SENSOR-03 | http://203.0.113.33:9999/dashboard | Next.js | FastAPI | Beelzebub (Go) | PostgreSQL |
+| Sensor | Local frontend | Local backend | Local storage | Shipper variant |
+|---|---|---|---|---|
+| SENSOR-01 | HTML/CSS/JS | FastAPI | JSON-lines log file | log-tail |
+| SENSOR-02 | HTML/CSS/JS | FastAPI | JSON-lines log file | log-tail |
+| SENSOR-03 | Next.js | FastAPI | PostgreSQL | Postgres reader |
 
-**Central platform stack:** Next.js (frontend) + FastAPI (backend) + PostgreSQL (DB) — same stack as SENSOR-03, so patterns/libraries can be shared.
+**Central platform stack:** Next.js (frontend) + FastAPI (backend) + PostgreSQL (DB).
 
-**Key simplification:** all three VPS run the same underlying honeypot engine — **Beelzebub**. Beelzebub emits its own structured JSON-per-line events (typical fields: `ID`, `DateTime`, `Description`, `Protocol`, `RemoteAddr`, `SourceIp`, `SourcePort`, `User`, `Password`, `Status`, `Client`) to a configurable `logsPath`, and it has a **native RabbitMQ tracing output** you can flip on in `beelzebub.yaml` (`core.tracings.rabbit-mq.enabled: true`) to stream events as JSON messages instead of/in addition to the log file.
+**Key simplification: the sensors share an event vocabulary even when they do not share a stack.**
+Whatever emulates the services, each sensor produces structured JSON per event with a common set of
+fields (`ID`, `DateTime`, `Description`, `Protocol`, `RemoteAddr`, `SourceIp`, `SourcePort`, `User`,
+`Password`, `Status`, `Client`), written to a configurable path. That canonical shape is documented
+in [`agent/README.md`](./agent/README.md) and is the platform's only hard input contract.
 
-This means the "different stacks" (HTML+FastAPI vs Next.js+FastAPI+Postgres) mostly affect how each VPS renders its *own local* dashboard — they don't affect the raw event source. The central platform's shipper agents only need to speak one language: Beelzebub's event JSON. That's a much smaller integration surface than originally scoped, and it holds true for any future VPS as long as it's also running Beelzebub (or any other engine that emits comparable JSON).
+So the differing stacks (HTML+FastAPI vs Next.js+FastAPI+Postgres) mostly affect how each sensor
+renders its *own local* dashboard. They do not affect the raw event source. The shipper agents only
+need to speak one language: the canonical event JSON. That is a much smaller integration surface
+than originally scoped, and it holds for any future sensor that emits a comparable shape, whatever
+honeypot software is behind it.
 
 ---
 
@@ -70,22 +80,22 @@ This is what makes the system "agnostic" and future-proof: onboarding VPS #4, #5
 - No need to open inbound DB ports on each VPS (better security posture — you don't want your central platform holding credentials to poke into every honeypot's DB).
 - Shipper agent can batch, retry, and buffer during network outages.
 
-**Two viable shipper mechanisms, since every VPS runs Beelzebub underneath:**
+**Two viable shipper mechanisms, both resting on the shared event vocabulary:**
 
 **Option A — Log-tail agent (simplest, recommended for MVP):**
-1. Small Python service (systemd) on each VPS tails `logsPath` (Beelzebub's JSON-lines log file), reading new lines since a saved byte-offset/inode checkpoint.
-2. Maps Beelzebub's native fields (`SourceIp`, `SourcePort`, `Protocol`, `User`, `Password`, `Status`, `DateTime`, `Description`, `ID`) into the canonical event schema (Section 3.2), generating a stable `event_uuid` (Beelzebub's own `ID` field works well for this).
-3. POSTs batches (every 30–60s) to `/api/v1/events` with the VPS's bearer token.
+1. Small Python service (systemd) on each sensor tails the configured JSON-lines event log, reading new lines since a saved byte-offset/inode checkpoint.
+2. Maps the canonical input fields (`SourceIp`, `SourcePort`, `Protocol`, `User`, `Password`, `Status`, `DateTime`, `Description`, `ID`) into the central event schema (Section 3.2), generating a stable `event_uuid` (the sensor's own `ID` field works well for this when present).
+3. POSTs batches (every 30–60s) to `/api/v1/events` with the sensor's bearer token.
 4. Persists checkpoint to disk so restarts don't re-send old lines.
 5. Retries with backoff on network failure; buffers to local disk if central is unreachable so nothing is lost.
-- Works identically on SENSOR-01/SENSOR-02 (file-based) and SENSOR-03 (Postgres) — Beelzebub's log file exists regardless of what the surrounding app's DB looks like.
+- Works on file-based and Postgres-backed sensors alike, since the event log exists regardless of what the surrounding app's DB looks like.
 
-**Option B — Native RabbitMQ tracing (better for near-real-time, worth doing in Phase 2/3):**
-1. Enable `core.tracings.rabbit-mq.enabled: true` in each VPS's `beelzebub.yaml`, pointed at a **central** RabbitMQ instance (or a per-VPS local RabbitMQ relayed onward).
-2. A consumer service on the central platform subscribes to all three queues, normalizes, and writes directly to Postgres — no polling, no log-tailing, no local checkpoint files to manage.
-3. Trade-off: requires each VPS to have outbound network access to the central RabbitMQ port, and a little more infra to stand up centrally.
+**Option B — Message-queue ingestion (better for near-real-time, worth doing in Phase 2/3):**
+1. Point each sensor's tracing output at a **central** AMQP broker (or a per-sensor local broker relayed onward), where the honeypot software supports publishing events directly.
+2. A consumer service on the central platform subscribes to every queue, normalizes, and writes directly to Postgres — no polling, no log-tailing, no local checkpoint files to manage.
+3. Trade-off: requires outbound network access from each sensor to the broker port, and a little more infra to stand up centrally.
 
-Start with **Option A** for the MVP (zero changes needed to the existing Beelzebub configs on SENSOR-01/SENSOR-03/SENSOR-02, agent is just a log reader), and consider migrating to **Option B** once volume/latency needs justify it.
+Start with **Option A** for the MVP (no changes needed to existing sensor configuration, the agent is just a log reader), and consider migrating to **Option B** once volume and latency needs justify it.
 
 ---
 
@@ -167,8 +177,8 @@ CREATE TABLE threat_intel (
 ```
 
 **Design notes:**
-- `raw_payload JSONB` preserves the original Beelzebub event exactly as emitted (`ID`, `DateTime`, `Description`, `Protocol`, `RemoteAddr`, `SourceIp`, `SourcePort`, `User`, `Password`, `Status`, `Client`, etc.) — this is your safety net if the normalized columns miss a field you later care about, and it's what makes onboarding a future VPS painless as long as it's also Beelzebub-based (or any engine emitting comparable JSON).
-- Canonical field mapping from Beelzebub → `events`: `SourceIp`→`src_ip`, `SourcePort`→(store in raw, optional column), `Protocol`→`protocol`, `User`→`username_tried`, `Password`→`password_tried`, `DateTime`→`occurred_at`, `Description`/`Msg`→`event_type` (may need light normalization since Beelzebub's `Description` is a free-text string per service, e.g. "SSH interactive ChatGPT" — worth mapping to a small controlled vocabulary like `ssh_login_attempt`, `http_scan`, `telnet_login_attempt` in the shipper agent).
+- `raw_payload JSONB` preserves the sensor's event exactly as emitted (`ID`, `DateTime`, `Description`, `Protocol`, `RemoteAddr`, `SourceIp`, `SourcePort`, `User`, `Password`, `Status`, `Client`, etc.) — this is your safety net if the normalized columns miss a field you later care about, and it's what makes onboarding a future sensor painless as long as it emits a comparable JSON shape.
+- Canonical field mapping from the sensor event → `events`: `SourceIp`→`src_ip`, `SourcePort`→(store in raw, optional column), `Protocol`→`protocol`, `User`→`username_tried`, `Password`→`password_tried`, `DateTime`→`occurred_at`, `Description`/`Msg`→`event_type` (needs light normalization, since `Description` is a free-text string that varies per emulated service, e.g. "SSH interactive ubuntu" — worth mapping to a small controlled vocabulary like `ssh_login_attempt`, `http_scan`, `telnet_login_attempt` in the shipper agent).
 - `ip_registry` + `ip_vps_sightings` is the backbone of cross-VPS IP linking (Section 5).
 - Partitioning `events` by month (Postgres native partitioning) is worth doing once volume grows — flagged in Section 8.
 
@@ -344,12 +354,18 @@ This can run as a Postgres trigger on `events` insert (simplest, keeps logic in 
 
 ---
 
-## 10. Immediate Next Steps (for VS Code)
+## 10. Deployment checklist
 
-Stacks are confirmed — all three VPS run Beelzebub underneath, central platform is Next.js + FastAPI + PostgreSQL. Before writing code, we just need to confirm on each VPS:
-1. The exact `logsPath` configured in each VPS's `beelzebub.yaml` (default is `./logs/beelzebub.log`, but confirm — especially since SENSOR-03 may have it pointed differently given it already writes to Postgres).
-2. Whether we're standing up a **new, fourth VPS** to host the central platform (confirmed: yes) — need its IP/access so we can provision Postgres, FastAPI, and Next.js there.
-3. Confirm outbound network access from SENSOR-01/SENSOR-03/SENSOR-02 to the new central VPS on whatever port the ingestion API will listen on (needed either way, but especially relevant if we later move to the RabbitMQ option).
+Central platform is Next.js + FastAPI + PostgreSQL. Per sensor, confirm before provisioning:
+
+1. The exact path the sensor writes its JSON-lines event log to, or its database DSN for
+   Postgres-backed sensors.
+2. A host for the central platform, with capacity to run Postgres, FastAPI and Next.js.
+3. Outbound network access from every sensor to the central host on the ingestion API port. Needed
+   for the log-tail agent, and equally for the message-queue option later.
+4. TLS termination and an authentication layer in front of the read API before the console is
+   reachable from anywhere untrusted. The ingestion path is authenticated per sensor; the read path
+   is not authenticated by default and must not be exposed as-is.
 
 **Build order:**
 1. Provision the new central VPS (Docker, Postgres, reverse proxy/TLS).

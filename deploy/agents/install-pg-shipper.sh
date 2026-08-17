@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Install PostgreSQL shipper agent on SENSOR-03 honeypot VPS.
 # Run ON the SENSOR-03 box as root:
-#   CENTRAL_URL=http://13.140.175.16/api/v1 API_KEY=lsk_... DATABASE_URL=postgresql://... bash install-pg-shipper.sh
+#   CENTRAL_URL=https://your-central-platform/api/v1 API_KEY=lsk_... DATABASE_URL=postgresql://... bash install-pg-shipper.sh
 set -euo pipefail
 
-CENTRAL_URL="${CENTRAL_URL:?Set CENTRAL_URL (e.g. http://13.140.175.16/api/v1)}"
+CENTRAL_URL="${CENTRAL_URL:?Set CENTRAL_URL (e.g. https://your-central-platform/api/v1)}"
 API_KEY="${API_KEY:?Set API_KEY from central sensor registration}"
 DATABASE_URL="${DATABASE_URL:?Set DATABASE_URL (SENSOR-03 honeypot Postgres DSN)}"
 VERIFY_TLS="${VERIFY_TLS:-false}"

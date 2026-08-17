@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     # Database
-    database_url: str = "postgresql+psycopg://lure:lure@localhost:5432/trapline"
+    database_url: str = "postgresql+psycopg://trapline:trapline@localhost:5432/trapline"
 
     # Security
     secret_key: str = "change-me-in-prod-please-0000000000000000"

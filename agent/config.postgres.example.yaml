@@ -8,7 +8,7 @@ central_url: "https://your-central-platform/api/v1"
 api_key: "lsk_REPLACE_WITH_SENSOR_03_KEY"
 
 # SENSOR-03's honeypot PostgreSQL DSN (same DATABASE_URL the Vector honeypot writes to).
-database_url: "postgresql://lure:lure@localhost:5432/trapline"
+database_url: "postgresql://USER:PASS@localhost:5432/trapline"
 
 # First-run behaviour when no checkpoint exists:
 #   now       → only ship events inserted from now on (default)

@@ -15,7 +15,7 @@ from .cache import prime
 from .config import settings
 from .database import SessionLocal, engine
 from .geoip import geo_enrich_loop
-from .routers import events, ips, stats, threat_intel, vps
+from .routers import events, export, ips, stats, threat_intel, vps
 from .routers.stats import _overview_producer, overview_cache_key
 from .vps_health import health_monitor_loop, repair_last_seen_from_events
 
@@ -111,6 +111,7 @@ app.add_middleware(
 
 API = "/api/v1"
 app.include_router(events.router, prefix=API)
+app.include_router(export.router, prefix=API)
 app.include_router(vps.router, prefix=API)
 app.include_router(ips.router, prefix=API)
 app.include_router(stats.router, prefix=API)

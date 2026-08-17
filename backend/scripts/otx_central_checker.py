@@ -117,7 +117,7 @@ def parse_args() -> argparse.Namespace:
         "--database-url",
         default=os.environ.get(
             "DATABASE_URL",
-            "postgresql://lure:lure_prod_change_me@127.0.0.1:5433/trapline",
+            "postgresql://trapline:change-me@127.0.0.1:5433/trapline",
         ),
         help="Postgres URL (or set DATABASE_URL). Accepts postgresql+psycopg:// form.",
     )
