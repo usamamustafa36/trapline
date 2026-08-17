@@ -120,7 +120,7 @@ app.include_router(threat_intel.router, prefix=API)
 
 @app.get(f"{API}/health", tags=["ops"])
 def health() -> dict:
-    return {"status": "operational", "service": "lure-c2-api", "version": __version__}
+    return {"status": "operational", "service": "trapline-api", "version": __version__}
 
 
 @app.get("/", include_in_schema=False)

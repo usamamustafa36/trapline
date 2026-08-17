@@ -130,7 +130,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         "-o",
-        default="/home/asimzaman/Trapline_C-C/.logs/otx_analysis_results.xlsx",
+        default=".logs/otx_analysis_results.xlsx",
         help="Output Excel file path",
     )
     parser.add_argument(
@@ -158,7 +158,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--checkpoint",
-        default="/home/asimzaman/Trapline_C-C/.logs/otx_checkpoint.csv",
+        default=".logs/otx_checkpoint.csv",
         help="Checkpoint CSV saved after each IP",
     )
     parser.add_argument(

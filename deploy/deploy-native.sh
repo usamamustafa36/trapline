@@ -46,7 +46,7 @@ export PATH="${ENV_PREFIX}/bin:${PATH}"
 if [[ ! -f .env ]]; then
   SECRET=$(python3 -c "import secrets; print(secrets.token_hex(32))")
   cat > .env <<EOF
-POSTGRES_USER=lure
+POSTGRES_USER=trapline
 POSTGRES_PASSWORD=$(python3 -c "import secrets; print(secrets.token_urlsafe(16))")
 POSTGRES_DB=trapline
 SECRET_KEY=${SECRET}

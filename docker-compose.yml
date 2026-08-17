@@ -3,13 +3,13 @@ services:
     image: postgres:16-alpine
     container_name: lure_c2_db
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-lure}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lure}
+      POSTGRES_USER: ${POSTGRES_USER:-trapline}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-trapline}
       POSTGRES_DB: ${POSTGRES_DB:-trapline}
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lure} -d ${POSTGRES_DB:-trapline}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-trapline} -d ${POSTGRES_DB:-trapline}"]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -22,7 +22,7 @@ services:
       central-db:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-lure}:${POSTGRES_PASSWORD:-lure}@central-db:5432/${POSTGRES_DB:-trapline}
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-trapline}:${POSTGRES_PASSWORD:-trapline}@central-db:5432/${POSTGRES_DB:-trapline}
       SECRET_KEY: ${SECRET_KEY:-change-me-in-prod-please-0000000000000000}
       FERNET_KEY: ${FERNET_KEY:-}
       SEED_ON_START: ${SEED_ON_START:-false}

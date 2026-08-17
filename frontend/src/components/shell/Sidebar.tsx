@@ -40,7 +40,7 @@ export function Sidebar() {
         <ProjectLogo />
         <div className="relative leading-tight">
           <div className="font-display text-[15px] font-bold tracking-wide text-fg">
-            Lure<span className="text-signal text-glow-signal">Secure</span>
+            Trap<span className="text-signal text-glow-signal">line</span>
           </div>
           <div className="hud-label !text-[9px] text-muted">Central Honeypot Intelligence</div>
         </div>
