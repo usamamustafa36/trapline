@@ -135,3 +135,106 @@ export interface StatsOverview {
 }
 
 export type Window = "24h" | "7d" | "30d" | "all";
+
+
+// ── Analysis ───────────────────────────────────────────────────────────────────
+
+export type SensorWindow = {
+  alias: string;
+  events: number;
+  first: string;
+  last: string;
+  days: number;
+  addresses: number;
+};
+
+export type CoordinatedAddress = {
+  ip: string;
+  verdict: string;
+  sensors: string[];
+  order: string[];
+  span_seconds: number;
+  max_lag_seconds: number;
+  events: number;
+};
+
+export type CommandPhase = {
+  label: string;
+  detail: string;
+  count: number;
+  evidence: string[];
+  attck: string | null;
+  sources: number;
+  techniques: { attck: string; label: string; count: number }[];
+};
+
+export type LadderGroup = {
+  ladder: string[];
+  ladder_length: number;
+  addresses: string[];
+  address_count: number;
+};
+
+export type AnalysisReport = {
+  overview: { events: number; addresses: number; sensors: SensorWindow[] };
+  coordination: {
+    multi_sensor_addresses: number;
+    verdicts: Record<string, number>;
+    addresses: CoordinatedAddress[];
+  };
+  clients: {
+    buckets: Record<string, { events: number; addresses: number; share: number; clients: string[] }>;
+    clients: { client: string; events: number; addresses: number; bucket: string }[];
+    total_events: number;
+  };
+  credentials: {
+    sources_with_ladders: number;
+    shared_ladder_groups: number;
+    groups: LadderGroup[];
+    top_passwords: [string, number][];
+    top_usernames: [string, number][];
+  };
+  guessing: {
+    styles: Record<string, number>;
+    sources: { ip: string; style: string; attck: string | null; usernames: number; passwords: number; attempts: number }[];
+  };
+  commands: {
+    total_command_events: number;
+    classified: number;
+    phases: CommandPhase[];
+    techniques: [string, number][];
+    unmatched_top: [string, number][];
+  };
+  rhythm: {
+    by_hour_utc: number[];
+    coefficient_of_variation: number;
+    reading: string;
+    peak_hour_utc: number;
+    trough_hour_utc: number;
+  };
+  http: {
+    top_paths: { uri: string; count: number }[];
+    top_user_agents: { agent: string; count: number }[];
+  };
+};
+
+export type SigmaRule = {
+  title: string;
+  id: string;
+  description: string;
+  level: string;
+  tags: string[];
+  logsource: Record<string, string>;
+  detection: Record<string, unknown>;
+  falsepositives: string[];
+  trapline_evidence: Record<string, unknown>;
+};
+
+export type Blocklist = {
+  generated: string;
+  total: number;
+  high_confidence: number;
+  entries: { ip: string; confidence: number; reason: string; sensors: string[]; events: number }[];
+  nftables: string;
+  note: string;
+};

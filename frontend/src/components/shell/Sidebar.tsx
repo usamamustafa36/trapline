@@ -10,6 +10,8 @@ import {
   SlidersHorizontal,
   Radio,
   ShieldCheck,
+  Fingerprint,
+  ShieldAlert,
 } from "lucide-react";
 import { api } from "@/lib/api";
 import { STATUS_COLOR } from "@/lib/theme";
@@ -19,6 +21,8 @@ import { ProjectLogo, VpsLogo } from "@/components/ui/VpsLogo";
 
 const NAV = [
   { href: "/", label: "Overwatch", sub: "Aggregate", icon: Radar },
+  { href: "/analysis", label: "Analysis", sub: "Attribution", icon: Fingerprint },
+  { href: "/detections", label: "Detections", sub: "Sigma / STIX", icon: ShieldAlert },
   { href: "/ips/cross-vps", label: "Cross-VPS", sub: "IP Linking", icon: Network },
   { href: "/reports", label: "Reports", sub: "Export", icon: FileBarChart },
   { href: "/settings/vps", label: "Sensors", sub: "Config", icon: SlidersHorizontal },

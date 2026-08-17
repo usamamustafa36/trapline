@@ -1,4 +1,7 @@
 import type {
+  AnalysisReport,
+  Blocklist,
+  SigmaRule,
   CrossVpsIp,
   IpProfile,
   PagedEvents,
@@ -16,8 +19,22 @@ export class ApiError extends Error {
   }
 }
 
+/**
+ * Build a request URL that works whether `NEXT_PUBLIC_API_BASE` is absolute
+ * ("https://api.example.com/api/v1") or relative ("/api/v1", used when the console
+ * serves its own data). `new URL()` throws on a relative string with no base, so a
+ * relative base is resolved against the current origin.
+ */
+function requestUrl(path: string): URL {
+  const target = `${BASE}${path}`;
+  if (/^https?:\/\//i.test(target)) return new URL(target);
+  const origin =
+    typeof window !== "undefined" ? window.location.origin : "http://localhost";
+  return new URL(target, origin);
+}
+
 async function get<T>(path: string, params?: Record<string, string | number | undefined>): Promise<T> {
-  const url = new URL(`${BASE}${path}`);
+  const url = requestUrl(path);
   if (params) {
     for (const [k, v] of Object.entries(params)) {
       if (v !== undefined && v !== "" && v !== null) url.searchParams.set(k, String(v));
@@ -47,6 +64,12 @@ export const api = {
     get<PagedEvents>("/events", params),
   crossVps: (min_vps = 2) => get<CrossVpsIp[]>("/ips/cross-vps", { min_vps }),
   ipProfile: (ip: string) => get<IpProfile>(`/ips/${encodeURIComponent(ip)}`),
+
+  // Analysis and generated detection content.
+  analysisReport: () => get<AnalysisReport>("/analysis/report"),
+  sigmaRules: () => get<{ count: number; rules: SigmaRule[] }>("/detections/sigma"),
+  sigmaYamlUrl: () => `${BASE}/detections/sigma.yml`,
+  blocklist: () => get<Blocklist>("/detections/blocklist"),
 
   registerVps: async (
     payload: Record<string, unknown>,
