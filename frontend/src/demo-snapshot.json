@@ -1,0 +1,5966 @@
+{
+ "/api/v1/health": {
+  "status": "operational",
+  "service": "trapline-api",
+  "version": "1.0.0"
+ },
+ "/api/v1/vps": [
+  {
+   "id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+   "alias": "SENSOR-01",
+   "display_name": "Sensor 01",
+   "base_url": null,
+   "stack_type": "imported",
+   "region": null,
+   "lat": null,
+   "lon": null,
+   "is_active": true,
+   "last_seen_at": "2026-08-17T07:39:18.655917Z",
+   "has_otx_key": false,
+   "status": "offline",
+   "event_count": 42
+  },
+  {
+   "id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+   "alias": "SENSOR-02",
+   "display_name": "Sensor 02",
+   "base_url": null,
+   "stack_type": "imported",
+   "region": null,
+   "lat": null,
+   "lon": null,
+   "is_active": true,
+   "last_seen_at": "2026-08-17T07:39:18.655917Z",
+   "has_otx_key": false,
+   "status": "offline",
+   "event_count": 7
+  },
+  {
+   "id": "0c84d604-48b2-4915-8937-3a47c8c8dfd2",
+   "alias": "SENSOR-03",
+   "display_name": "Sensor 03",
+   "base_url": null,
+   "stack_type": "imported",
+   "region": null,
+   "lat": null,
+   "lon": null,
+   "is_active": true,
+   "last_seen_at": "2026-08-17T07:39:18.655917Z",
+   "has_otx_key": false,
+   "status": "offline",
+   "event_count": 1
+  }
+ ],
+ "/api/v1/stats/overview?window=24h": {
+  "kpi": {
+   "events_24h": 50,
+   "events_7d": 50,
+   "events_30d": 50,
+   "events_all": 50,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 17,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T05:00:00Z",
+    "counts": {
+     "SENSOR-03": 1,
+     "SENSOR-02": 1,
+     "SENSOR-01": 11
+    }
+   },
+   {
+    "bucket": "2026-08-17T06:00:00Z",
+    "counts": {
+     "SENSOR-02": 6,
+     "SENSOR-01": 31
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "103.54.56.236",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 11,
+    "first_seen_at": "2026-08-17T05:50:23Z",
+    "last_seen_at": "2026-08-17T06:18:21Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.16",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 7,
+    "first_seen_at": "2026-08-17T05:51:15Z",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "120.87.99.202",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 6,
+    "first_seen_at": "2026-08-17T05:51:31Z",
+    "last_seen_at": "2026-08-17T06:15:53Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "89.163.204.62",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T05:54:12Z",
+    "last_seen_at": "2026-08-17T06:17:08Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "2.57.121.112",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T06:16:02Z",
+    "last_seen_at": "2026-08-17T06:16:03Z",
+    "country_code": "GB",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "66.132.195.33",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 3,
+    "first_seen_at": "2026-08-17T06:05:08Z",
+    "last_seen_at": "2026-08-17T06:06:04Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   },
+   {
+    "ip": "94.154.35.215",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T05:52:40Z",
+    "last_seen_at": "2026-08-17T06:12:51Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "58.34.174.90",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:03:03Z",
+    "last_seen_at": "2026-08-17T06:03:03Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "176.53.159.196",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:56:20Z",
+    "last_seen_at": "2026-08-17T05:56:20Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "ssh_login_attempt",
+    "count": 41
+   },
+   {
+    "name": "http_scan",
+    "count": 9
+   }
+  ],
+  "protocols": [
+   {
+    "name": "ssh",
+    "count": 41
+   },
+   {
+    "name": "http",
+    "count": 6
+   },
+   {
+    "name": "https",
+    "count": 3
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 16
+   },
+   {
+    "country_code": "TR",
+    "count": 9
+   },
+   {
+    "country_code": "CN",
+    "count": 7
+   },
+   {
+    "country_code": "DE",
+    "count": 6
+   },
+   {
+    "country_code": "NL",
+    "count": 5
+   },
+   {
+    "country_code": "GB",
+    "count": 5
+   },
+   {
+    "country_code": "CH",
+    "count": 1
+   },
+   {
+    "country_code": "PK",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-01",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "seconds_since": 4839.690086
+   },
+   {
+    "alias": "SENSOR-02",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "seconds_since": 4839.691008
+   },
+   {
+    "alias": "SENSOR-03",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "seconds_since": 4839.691672
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "123456",
+    "count": 9
+   },
+   {
+    "name": "support",
+    "count": 8
+   },
+   {
+    "name": "123",
+    "count": 2
+   },
+   {
+    "name": "woaini123",
+    "count": 1
+   },
+   {
+    "name": "changeme_123",
+    "count": 1
+   },
+   {
+    "name": "zaq!@#123",
+    "count": 1
+   },
+   {
+    "name": "sms",
+    "count": 1
+   },
+   {
+    "name": "bertha12345",
+    "count": 1
+   },
+   {
+    "name": "adminadmin",
+    "count": 1
+   },
+   {
+    "name": "bertha1",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-01?window=24h": {
+  "kpi": {
+   "events_24h": 42,
+   "events_7d": 42,
+   "events_30d": 42,
+   "events_all": 42,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 12,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T05:00:00Z",
+    "counts": {
+     "SENSOR-01": 11
+    }
+   },
+   {
+    "bucket": "2026-08-17T06:00:00Z",
+    "counts": {
+     "SENSOR-01": 31
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "103.54.56.236",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 11,
+    "first_seen_at": "2026-08-17T05:50:23Z",
+    "last_seen_at": "2026-08-17T06:18:21Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.16",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 7,
+    "first_seen_at": "2026-08-17T05:51:15Z",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "120.87.99.202",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 6,
+    "first_seen_at": "2026-08-17T05:51:31Z",
+    "last_seen_at": "2026-08-17T06:15:53Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "2.57.121.112",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T06:16:02Z",
+    "last_seen_at": "2026-08-17T06:16:03Z",
+    "country_code": "GB",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "89.163.204.62",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T05:54:12Z",
+    "last_seen_at": "2026-08-17T06:17:08Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.35.215",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T05:52:40Z",
+    "last_seen_at": "2026-08-17T06:12:51Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "74.208.149.68",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:51:58Z",
+    "last_seen_at": "2026-08-17T05:51:58Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.56",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:10:17Z",
+    "last_seen_at": "2026-08-17T06:10:17Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "14.1.105.73",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:11:53Z",
+    "last_seen_at": "2026-08-17T06:11:53Z",
+    "country_code": "PK",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   }
+  ],
+  "event_types": [
+   {
+    "name": "ssh_login_attempt",
+    "count": 40
+   },
+   {
+    "name": "http_scan",
+    "count": 2
+   }
+  ],
+  "protocols": [
+   {
+    "name": "ssh",
+    "count": 40
+   },
+   {
+    "name": "http",
+    "count": 2
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 12
+   },
+   {
+    "country_code": "TR",
+    "count": 9
+   },
+   {
+    "country_code": "CN",
+    "count": 6
+   },
+   {
+    "country_code": "DE",
+    "count": 5
+   },
+   {
+    "country_code": "GB",
+    "count": 5
+   },
+   {
+    "country_code": "NL",
+    "count": 3
+   },
+   {
+    "country_code": "CH",
+    "count": 1
+   },
+   {
+    "country_code": "PK",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-01",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "seconds_since": 4839.745593
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "123456",
+    "count": 9
+   },
+   {
+    "name": "support",
+    "count": 8
+   },
+   {
+    "name": "123",
+    "count": 2
+   },
+   {
+    "name": "adminadmin",
+    "count": 1
+   },
+   {
+    "name": "Tester123",
+    "count": 1
+   },
+   {
+    "name": "bertha",
+    "count": 1
+   },
+   {
+    "name": "bertha123",
+    "count": 1
+   },
+   {
+    "name": "bertha1",
+    "count": 1
+   },
+   {
+    "name": "bertha1234",
+    "count": 1
+   },
+   {
+    "name": "P@ssw0rd",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-02?window=24h": {
+  "kpi": {
+   "events_24h": 7,
+   "events_7d": 7,
+   "events_30d": 7,
+   "events_all": 7,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 5,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T05:00:00Z",
+    "counts": {
+     "SENSOR-02": 1
+    }
+   },
+   {
+    "bucket": "2026-08-17T06:00:00Z",
+    "counts": {
+     "SENSOR-02": 6
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "66.132.195.33",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 3,
+    "first_seen_at": "2026-08-17T06:05:08Z",
+    "last_seen_at": "2026-08-17T06:06:04Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   },
+   {
+    "ip": "58.34.174.90",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:03:03Z",
+    "last_seen_at": "2026-08-17T06:03:03Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "195.182.16.23",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:14:16Z",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "204.76.203.30",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:52:02Z",
+    "last_seen_at": "2026-08-17T05:52:02Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "http_scan",
+    "count": 6
+   },
+   {
+    "name": "ssh_login_attempt",
+    "count": 1
+   }
+  ],
+  "protocols": [
+   {
+    "name": "http",
+    "count": 3
+   },
+   {
+    "name": "https",
+    "count": 3
+   },
+   {
+    "name": "ssh",
+    "count": 1
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 3
+   },
+   {
+    "country_code": "NL",
+    "count": 2
+   },
+   {
+    "country_code": "CN",
+    "count": 1
+   },
+   {
+    "country_code": "DE",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-02",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "seconds_since": 4839.775529
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "121212",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-03?window=24h": {
+  "kpi": {
+   "events_24h": 1,
+   "events_7d": 1,
+   "events_30d": 1,
+   "events_all": 1,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 1,
+   "cross_vps_ips": 0,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T05:00:00Z",
+    "counts": {
+     "SENSOR-03": 1
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "135.119.112.132",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-03"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:51:08Z",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "http_scan",
+    "count": 1
+   }
+  ],
+  "protocols": [
+   {
+    "name": "http",
+    "count": 1
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-03",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "seconds_since": 4839.795758
+   }
+  ],
+  "top_credentials": []
+ },
+ "/api/v1/stats/overview?window=7d": {
+  "kpi": {
+   "events_24h": 50,
+   "events_7d": 50,
+   "events_30d": 50,
+   "events_all": 50,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 17,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-03": 1,
+     "SENSOR-02": 7,
+     "SENSOR-01": 42
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "103.54.56.236",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 11,
+    "first_seen_at": "2026-08-17T05:50:23Z",
+    "last_seen_at": "2026-08-17T06:18:21Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.16",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 7,
+    "first_seen_at": "2026-08-17T05:51:15Z",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "120.87.99.202",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 6,
+    "first_seen_at": "2026-08-17T05:51:31Z",
+    "last_seen_at": "2026-08-17T06:15:53Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "89.163.204.62",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T05:54:12Z",
+    "last_seen_at": "2026-08-17T06:17:08Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "2.57.121.112",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T06:16:02Z",
+    "last_seen_at": "2026-08-17T06:16:03Z",
+    "country_code": "GB",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "66.132.195.33",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 3,
+    "first_seen_at": "2026-08-17T06:05:08Z",
+    "last_seen_at": "2026-08-17T06:06:04Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   },
+   {
+    "ip": "94.154.35.215",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T05:52:40Z",
+    "last_seen_at": "2026-08-17T06:12:51Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "58.34.174.90",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:03:03Z",
+    "last_seen_at": "2026-08-17T06:03:03Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "176.53.159.196",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:56:20Z",
+    "last_seen_at": "2026-08-17T05:56:20Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "ssh_login_attempt",
+    "count": 41
+   },
+   {
+    "name": "http_scan",
+    "count": 9
+   }
+  ],
+  "protocols": [
+   {
+    "name": "ssh",
+    "count": 41
+   },
+   {
+    "name": "http",
+    "count": 6
+   },
+   {
+    "name": "https",
+    "count": 3
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 16
+   },
+   {
+    "country_code": "TR",
+    "count": 9
+   },
+   {
+    "country_code": "CN",
+    "count": 7
+   },
+   {
+    "country_code": "DE",
+    "count": 6
+   },
+   {
+    "country_code": "NL",
+    "count": 5
+   },
+   {
+    "country_code": "GB",
+    "count": 5
+   },
+   {
+    "country_code": "CH",
+    "count": 1
+   },
+   {
+    "country_code": "PK",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-01",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "seconds_since": 4839.833746
+   },
+   {
+    "alias": "SENSOR-02",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "seconds_since": 4839.834521
+   },
+   {
+    "alias": "SENSOR-03",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "seconds_since": 4839.835044
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "123456",
+    "count": 9
+   },
+   {
+    "name": "support",
+    "count": 8
+   },
+   {
+    "name": "123",
+    "count": 2
+   },
+   {
+    "name": "woaini123",
+    "count": 1
+   },
+   {
+    "name": "changeme_123",
+    "count": 1
+   },
+   {
+    "name": "zaq!@#123",
+    "count": 1
+   },
+   {
+    "name": "sms",
+    "count": 1
+   },
+   {
+    "name": "bertha12345",
+    "count": 1
+   },
+   {
+    "name": "adminadmin",
+    "count": 1
+   },
+   {
+    "name": "bertha1",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-01?window=7d": {
+  "kpi": {
+   "events_24h": 42,
+   "events_7d": 42,
+   "events_30d": 42,
+   "events_all": 42,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 12,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-01": 42
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "103.54.56.236",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 11,
+    "first_seen_at": "2026-08-17T05:50:23Z",
+    "last_seen_at": "2026-08-17T06:18:21Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.16",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 7,
+    "first_seen_at": "2026-08-17T05:51:15Z",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "120.87.99.202",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 6,
+    "first_seen_at": "2026-08-17T05:51:31Z",
+    "last_seen_at": "2026-08-17T06:15:53Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "2.57.121.112",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T06:16:02Z",
+    "last_seen_at": "2026-08-17T06:16:03Z",
+    "country_code": "GB",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "89.163.204.62",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T05:54:12Z",
+    "last_seen_at": "2026-08-17T06:17:08Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.35.215",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T05:52:40Z",
+    "last_seen_at": "2026-08-17T06:12:51Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "74.208.149.68",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:51:58Z",
+    "last_seen_at": "2026-08-17T05:51:58Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.56",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:10:17Z",
+    "last_seen_at": "2026-08-17T06:10:17Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "14.1.105.73",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:11:53Z",
+    "last_seen_at": "2026-08-17T06:11:53Z",
+    "country_code": "PK",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   }
+  ],
+  "event_types": [
+   {
+    "name": "ssh_login_attempt",
+    "count": 40
+   },
+   {
+    "name": "http_scan",
+    "count": 2
+   }
+  ],
+  "protocols": [
+   {
+    "name": "ssh",
+    "count": 40
+   },
+   {
+    "name": "http",
+    "count": 2
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 12
+   },
+   {
+    "country_code": "TR",
+    "count": 9
+   },
+   {
+    "country_code": "CN",
+    "count": 6
+   },
+   {
+    "country_code": "DE",
+    "count": 5
+   },
+   {
+    "country_code": "GB",
+    "count": 5
+   },
+   {
+    "country_code": "NL",
+    "count": 3
+   },
+   {
+    "country_code": "CH",
+    "count": 1
+   },
+   {
+    "country_code": "PK",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-01",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "seconds_since": 4839.879447
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "123456",
+    "count": 9
+   },
+   {
+    "name": "support",
+    "count": 8
+   },
+   {
+    "name": "123",
+    "count": 2
+   },
+   {
+    "name": "adminadmin",
+    "count": 1
+   },
+   {
+    "name": "Tester123",
+    "count": 1
+   },
+   {
+    "name": "bertha",
+    "count": 1
+   },
+   {
+    "name": "bertha123",
+    "count": 1
+   },
+   {
+    "name": "bertha1",
+    "count": 1
+   },
+   {
+    "name": "bertha1234",
+    "count": 1
+   },
+   {
+    "name": "P@ssw0rd",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-02?window=7d": {
+  "kpi": {
+   "events_24h": 7,
+   "events_7d": 7,
+   "events_30d": 7,
+   "events_all": 7,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 5,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-02": 7
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "66.132.195.33",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 3,
+    "first_seen_at": "2026-08-17T06:05:08Z",
+    "last_seen_at": "2026-08-17T06:06:04Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   },
+   {
+    "ip": "58.34.174.90",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:03:03Z",
+    "last_seen_at": "2026-08-17T06:03:03Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "195.182.16.23",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:14:16Z",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "204.76.203.30",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:52:02Z",
+    "last_seen_at": "2026-08-17T05:52:02Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "http_scan",
+    "count": 6
+   },
+   {
+    "name": "ssh_login_attempt",
+    "count": 1
+   }
+  ],
+  "protocols": [
+   {
+    "name": "http",
+    "count": 3
+   },
+   {
+    "name": "https",
+    "count": 3
+   },
+   {
+    "name": "ssh",
+    "count": 1
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 3
+   },
+   {
+    "country_code": "NL",
+    "count": 2
+   },
+   {
+    "country_code": "CN",
+    "count": 1
+   },
+   {
+    "country_code": "DE",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-02",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "seconds_since": 4839.904062
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "121212",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-03?window=7d": {
+  "kpi": {
+   "events_24h": 1,
+   "events_7d": 1,
+   "events_30d": 1,
+   "events_all": 1,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 1,
+   "cross_vps_ips": 0,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-03": 1
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "135.119.112.132",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-03"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:51:08Z",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "http_scan",
+    "count": 1
+   }
+  ],
+  "protocols": [
+   {
+    "name": "http",
+    "count": 1
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-03",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "seconds_since": 4839.922082
+   }
+  ],
+  "top_credentials": []
+ },
+ "/api/v1/stats/overview?window=30d": {
+  "kpi": {
+   "events_24h": 50,
+   "events_7d": 50,
+   "events_30d": 50,
+   "events_all": 50,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 17,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-03": 1,
+     "SENSOR-02": 7,
+     "SENSOR-01": 42
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "103.54.56.236",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 11,
+    "first_seen_at": "2026-08-17T05:50:23Z",
+    "last_seen_at": "2026-08-17T06:18:21Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.16",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 7,
+    "first_seen_at": "2026-08-17T05:51:15Z",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "120.87.99.202",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 6,
+    "first_seen_at": "2026-08-17T05:51:31Z",
+    "last_seen_at": "2026-08-17T06:15:53Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "89.163.204.62",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T05:54:12Z",
+    "last_seen_at": "2026-08-17T06:17:08Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "2.57.121.112",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T06:16:02Z",
+    "last_seen_at": "2026-08-17T06:16:03Z",
+    "country_code": "GB",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "66.132.195.33",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 3,
+    "first_seen_at": "2026-08-17T06:05:08Z",
+    "last_seen_at": "2026-08-17T06:06:04Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   },
+   {
+    "ip": "94.154.35.215",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T05:52:40Z",
+    "last_seen_at": "2026-08-17T06:12:51Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "58.34.174.90",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:03:03Z",
+    "last_seen_at": "2026-08-17T06:03:03Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "176.53.159.196",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:56:20Z",
+    "last_seen_at": "2026-08-17T05:56:20Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "ssh_login_attempt",
+    "count": 41
+   },
+   {
+    "name": "http_scan",
+    "count": 9
+   }
+  ],
+  "protocols": [
+   {
+    "name": "ssh",
+    "count": 41
+   },
+   {
+    "name": "http",
+    "count": 6
+   },
+   {
+    "name": "https",
+    "count": 3
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 16
+   },
+   {
+    "country_code": "TR",
+    "count": 9
+   },
+   {
+    "country_code": "CN",
+    "count": 7
+   },
+   {
+    "country_code": "DE",
+    "count": 6
+   },
+   {
+    "country_code": "NL",
+    "count": 5
+   },
+   {
+    "country_code": "GB",
+    "count": 5
+   },
+   {
+    "country_code": "CH",
+    "count": 1
+   },
+   {
+    "country_code": "PK",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-01",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "seconds_since": 4839.955612
+   },
+   {
+    "alias": "SENSOR-02",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "seconds_since": 4839.95664
+   },
+   {
+    "alias": "SENSOR-03",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "seconds_since": 4839.957768
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "123456",
+    "count": 9
+   },
+   {
+    "name": "support",
+    "count": 8
+   },
+   {
+    "name": "123",
+    "count": 2
+   },
+   {
+    "name": "woaini123",
+    "count": 1
+   },
+   {
+    "name": "changeme_123",
+    "count": 1
+   },
+   {
+    "name": "zaq!@#123",
+    "count": 1
+   },
+   {
+    "name": "sms",
+    "count": 1
+   },
+   {
+    "name": "bertha12345",
+    "count": 1
+   },
+   {
+    "name": "adminadmin",
+    "count": 1
+   },
+   {
+    "name": "bertha1",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-01?window=30d": {
+  "kpi": {
+   "events_24h": 42,
+   "events_7d": 42,
+   "events_30d": 42,
+   "events_all": 42,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 12,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-01": 42
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "103.54.56.236",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 11,
+    "first_seen_at": "2026-08-17T05:50:23Z",
+    "last_seen_at": "2026-08-17T06:18:21Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.16",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 7,
+    "first_seen_at": "2026-08-17T05:51:15Z",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "120.87.99.202",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 6,
+    "first_seen_at": "2026-08-17T05:51:31Z",
+    "last_seen_at": "2026-08-17T06:15:53Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "2.57.121.112",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T06:16:02Z",
+    "last_seen_at": "2026-08-17T06:16:03Z",
+    "country_code": "GB",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "89.163.204.62",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T05:54:12Z",
+    "last_seen_at": "2026-08-17T06:17:08Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.35.215",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T05:52:40Z",
+    "last_seen_at": "2026-08-17T06:12:51Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "74.208.149.68",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:51:58Z",
+    "last_seen_at": "2026-08-17T05:51:58Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.56",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:10:17Z",
+    "last_seen_at": "2026-08-17T06:10:17Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "14.1.105.73",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:11:53Z",
+    "last_seen_at": "2026-08-17T06:11:53Z",
+    "country_code": "PK",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   }
+  ],
+  "event_types": [
+   {
+    "name": "ssh_login_attempt",
+    "count": 40
+   },
+   {
+    "name": "http_scan",
+    "count": 2
+   }
+  ],
+  "protocols": [
+   {
+    "name": "ssh",
+    "count": 40
+   },
+   {
+    "name": "http",
+    "count": 2
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 12
+   },
+   {
+    "country_code": "TR",
+    "count": 9
+   },
+   {
+    "country_code": "CN",
+    "count": 6
+   },
+   {
+    "country_code": "DE",
+    "count": 5
+   },
+   {
+    "country_code": "GB",
+    "count": 5
+   },
+   {
+    "country_code": "NL",
+    "count": 3
+   },
+   {
+    "country_code": "CH",
+    "count": 1
+   },
+   {
+    "country_code": "PK",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-01",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "seconds_since": 4840.007089
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "123456",
+    "count": 9
+   },
+   {
+    "name": "support",
+    "count": 8
+   },
+   {
+    "name": "123",
+    "count": 2
+   },
+   {
+    "name": "adminadmin",
+    "count": 1
+   },
+   {
+    "name": "Tester123",
+    "count": 1
+   },
+   {
+    "name": "bertha",
+    "count": 1
+   },
+   {
+    "name": "bertha123",
+    "count": 1
+   },
+   {
+    "name": "bertha1",
+    "count": 1
+   },
+   {
+    "name": "bertha1234",
+    "count": 1
+   },
+   {
+    "name": "P@ssw0rd",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-02?window=30d": {
+  "kpi": {
+   "events_24h": 7,
+   "events_7d": 7,
+   "events_30d": 7,
+   "events_all": 7,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 5,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-02": 7
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "66.132.195.33",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 3,
+    "first_seen_at": "2026-08-17T06:05:08Z",
+    "last_seen_at": "2026-08-17T06:06:04Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   },
+   {
+    "ip": "58.34.174.90",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:03:03Z",
+    "last_seen_at": "2026-08-17T06:03:03Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "195.182.16.23",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:14:16Z",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "204.76.203.30",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:52:02Z",
+    "last_seen_at": "2026-08-17T05:52:02Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "http_scan",
+    "count": 6
+   },
+   {
+    "name": "ssh_login_attempt",
+    "count": 1
+   }
+  ],
+  "protocols": [
+   {
+    "name": "http",
+    "count": 3
+   },
+   {
+    "name": "https",
+    "count": 3
+   },
+   {
+    "name": "ssh",
+    "count": 1
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 3
+   },
+   {
+    "country_code": "NL",
+    "count": 2
+   },
+   {
+    "country_code": "CN",
+    "count": 1
+   },
+   {
+    "country_code": "DE",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-02",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "seconds_since": 4840.038279
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "121212",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-03?window=30d": {
+  "kpi": {
+   "events_24h": 1,
+   "events_7d": 1,
+   "events_30d": 1,
+   "events_all": 1,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 1,
+   "cross_vps_ips": 0,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-03": 1
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "135.119.112.132",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-03"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:51:08Z",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "http_scan",
+    "count": 1
+   }
+  ],
+  "protocols": [
+   {
+    "name": "http",
+    "count": 1
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-03",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "seconds_since": 4840.058588
+   }
+  ],
+  "top_credentials": []
+ },
+ "/api/v1/stats/overview?window=all": {
+  "kpi": {
+   "events_24h": 50,
+   "events_7d": 50,
+   "events_30d": 50,
+   "events_all": 50,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 17,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-02": 7,
+     "SENSOR-01": 42,
+     "SENSOR-03": 1
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "103.54.56.236",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 11,
+    "first_seen_at": "2026-08-17T05:50:23Z",
+    "last_seen_at": "2026-08-17T06:18:21Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.16",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 7,
+    "first_seen_at": "2026-08-17T05:51:15Z",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "120.87.99.202",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 6,
+    "first_seen_at": "2026-08-17T05:51:31Z",
+    "last_seen_at": "2026-08-17T06:15:53Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "2.57.121.112",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T06:16:02Z",
+    "last_seen_at": "2026-08-17T06:16:03Z",
+    "country_code": "GB",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "89.163.204.62",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T05:54:12Z",
+    "last_seen_at": "2026-08-17T06:17:08Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "66.132.195.33",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 3,
+    "first_seen_at": "2026-08-17T06:05:08Z",
+    "last_seen_at": "2026-08-17T06:06:04Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   },
+   {
+    "ip": "94.154.35.215",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T05:52:40Z",
+    "last_seen_at": "2026-08-17T06:12:51Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "14.1.105.73",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:11:53Z",
+    "last_seen_at": "2026-08-17T06:11:53Z",
+    "country_code": "PK",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "204.76.203.30",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:52:02Z",
+    "last_seen_at": "2026-08-17T05:52:02Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "ssh_login_attempt",
+    "count": 41
+   },
+   {
+    "name": "http_scan",
+    "count": 9
+   }
+  ],
+  "protocols": [
+   {
+    "name": "ssh",
+    "count": 41
+   },
+   {
+    "name": "http",
+    "count": 6
+   },
+   {
+    "name": "https",
+    "count": 3
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 16
+   },
+   {
+    "country_code": "TR",
+    "count": 9
+   },
+   {
+    "country_code": "CN",
+    "count": 7
+   },
+   {
+    "country_code": "DE",
+    "count": 6
+   },
+   {
+    "country_code": "NL",
+    "count": 5
+   },
+   {
+    "country_code": "GB",
+    "count": 5
+   },
+   {
+    "country_code": "CH",
+    "count": 1
+   },
+   {
+    "country_code": "PK",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-01",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "seconds_since": 4840.098393
+   },
+   {
+    "alias": "SENSOR-02",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "seconds_since": 4840.098905
+   },
+   {
+    "alias": "SENSOR-03",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "seconds_since": 4840.09931
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "123456",
+    "count": 9
+   },
+   {
+    "name": "support",
+    "count": 8
+   },
+   {
+    "name": "123",
+    "count": 2
+   },
+   {
+    "name": "bertha12345",
+    "count": 1
+   },
+   {
+    "name": "bertha",
+    "count": 1
+   },
+   {
+    "name": "web12345",
+    "count": 1
+   },
+   {
+    "name": "P@ssw0rd",
+    "count": 1
+   },
+   {
+    "name": "Ab*123456",
+    "count": 1
+   },
+   {
+    "name": "drHsosw0iIPRMnLcZUwC",
+    "count": 1
+   },
+   {
+    "name": "Tester123",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-01?window=all": {
+  "kpi": {
+   "events_24h": 42,
+   "events_7d": 42,
+   "events_30d": 42,
+   "events_all": 42,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 12,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-01": 42
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "103.54.56.236",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 11,
+    "first_seen_at": "2026-08-17T05:50:23Z",
+    "last_seen_at": "2026-08-17T06:18:21Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.16",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 7,
+    "first_seen_at": "2026-08-17T05:51:15Z",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "120.87.99.202",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 6,
+    "first_seen_at": "2026-08-17T05:51:31Z",
+    "last_seen_at": "2026-08-17T06:15:53Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "2.57.121.112",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T06:16:02Z",
+    "last_seen_at": "2026-08-17T06:16:03Z",
+    "country_code": "GB",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "89.163.204.62",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 5,
+    "first_seen_at": "2026-08-17T05:54:12Z",
+    "last_seen_at": "2026-08-17T06:17:08Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.35.215",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 2,
+    "first_seen_at": "2026-08-17T05:52:40Z",
+    "last_seen_at": "2026-08-17T06:12:51Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "74.208.149.68",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:51:58Z",
+    "last_seen_at": "2026-08-17T05:51:58Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "94.154.43.56",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:10:17Z",
+    "last_seen_at": "2026-08-17T06:10:17Z",
+    "country_code": "TR",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "14.1.105.73",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:11:53Z",
+    "last_seen_at": "2026-08-17T06:11:53Z",
+    "country_code": "PK",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   }
+  ],
+  "event_types": [
+   {
+    "name": "ssh_login_attempt",
+    "count": 40
+   },
+   {
+    "name": "http_scan",
+    "count": 2
+   }
+  ],
+  "protocols": [
+   {
+    "name": "ssh",
+    "count": 40
+   },
+   {
+    "name": "http",
+    "count": 2
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 12
+   },
+   {
+    "country_code": "TR",
+    "count": 9
+   },
+   {
+    "country_code": "CN",
+    "count": 6
+   },
+   {
+    "country_code": "DE",
+    "count": 5
+   },
+   {
+    "country_code": "GB",
+    "count": 5
+   },
+   {
+    "country_code": "NL",
+    "count": 3
+   },
+   {
+    "country_code": "CH",
+    "count": 1
+   },
+   {
+    "country_code": "PK",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-01",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:18:47Z",
+    "seconds_since": 4840.142732
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "123456",
+    "count": 9
+   },
+   {
+    "name": "support",
+    "count": 8
+   },
+   {
+    "name": "123",
+    "count": 2
+   },
+   {
+    "name": "adminadmin",
+    "count": 1
+   },
+   {
+    "name": "Tester123",
+    "count": 1
+   },
+   {
+    "name": "bertha",
+    "count": 1
+   },
+   {
+    "name": "bertha123",
+    "count": 1
+   },
+   {
+    "name": "bertha1",
+    "count": 1
+   },
+   {
+    "name": "bertha1234",
+    "count": 1
+   },
+   {
+    "name": "P@ssw0rd",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-02?window=all": {
+  "kpi": {
+   "events_24h": 7,
+   "events_7d": 7,
+   "events_30d": 7,
+   "events_all": 7,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 5,
+   "cross_vps_ips": 1,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-02": 7
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "66.132.195.33",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 3,
+    "first_seen_at": "2026-08-17T06:05:08Z",
+    "last_seen_at": "2026-08-17T06:06:04Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "5.61.209.44",
+    "vps_count": 2,
+    "vps_aliases": [
+     "SENSOR-02",
+     "SENSOR-01"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:09:15Z",
+    "last_seen_at": "2026-08-17T06:14:57Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 71
+   },
+   {
+    "ip": "58.34.174.90",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:03:03Z",
+    "last_seen_at": "2026-08-17T06:03:03Z",
+    "country_code": "CN",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "195.182.16.23",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T06:14:16Z",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "country_code": "DE",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   },
+   {
+    "ip": "204.76.203.30",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-02"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:52:02Z",
+    "last_seen_at": "2026-08-17T05:52:02Z",
+    "country_code": "NL",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "http_scan",
+    "count": 6
+   },
+   {
+    "name": "ssh_login_attempt",
+    "count": 1
+   }
+  ],
+  "protocols": [
+   {
+    "name": "http",
+    "count": 3
+   },
+   {
+    "name": "https",
+    "count": 3
+   },
+   {
+    "name": "ssh",
+    "count": 1
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 3
+   },
+   {
+    "country_code": "NL",
+    "count": 2
+   },
+   {
+    "country_code": "CN",
+    "count": 1
+   },
+   {
+    "country_code": "DE",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-02",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T06:14:16Z",
+    "seconds_since": 4840.172107
+   }
+  ],
+  "top_credentials": [
+   {
+    "name": "121212",
+    "count": 1
+   }
+  ]
+ },
+ "/api/v1/stats/SENSOR-03?window=all": {
+  "kpi": {
+   "events_24h": 1,
+   "events_7d": 1,
+   "events_30d": 1,
+   "events_all": 1,
+   "active_vps": 0,
+   "total_vps": 3,
+   "unique_ips": 1,
+   "cross_vps_ips": 0,
+   "known_malicious_ips": 0
+  },
+  "timeline": [
+   {
+    "bucket": "2026-08-17T00:00:00Z",
+    "counts": {
+     "SENSOR-03": 1
+    }
+   }
+  ],
+  "top_ips": [
+   {
+    "ip": "135.119.112.132",
+    "vps_count": 1,
+    "vps_aliases": [
+     "SENSOR-03"
+    ],
+    "total_events": 1,
+    "first_seen_at": "2026-08-17T05:51:08Z",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "country_code": "US",
+    "otx_pulse_count": null,
+    "reputation_score": null,
+    "coordination_score": 0
+   }
+  ],
+  "event_types": [
+   {
+    "name": "http_scan",
+    "count": 1
+   }
+  ],
+  "protocols": [
+   {
+    "name": "http",
+    "count": 1
+   }
+  ],
+  "geo": [
+   {
+    "country_code": "US",
+    "count": 1
+   }
+  ],
+  "vps_health": [
+   {
+    "alias": "SENSOR-03",
+    "status": "offline",
+    "last_seen_at": "2026-08-17T05:51:08Z",
+    "seconds_since": 4840.195142
+   }
+  ],
+  "top_credentials": []
+ },
+ "/api/v1/events?page_size=14": {
+  "total": 50,
+  "page": 1,
+  "page_size": 14,
+  "items": [
+   {
+    "id": 1,
+    "event_uuid": "2023a11d-459f-5801-9107-de68c7892e01",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:18:47Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 2,
+    "event_uuid": "0800fed0-2776-57c4-ac77-a9b2ca516c7b",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:18:21Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "zaq!@#123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 3,
+    "event_uuid": "1a954a43-cae9-5de0-8b20-30d8c3ad7a90",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:17:08Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 6,
+    "event_uuid": "dc0d88da-6449-5526-9ca7-99a828f34c42",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 5,
+    "event_uuid": "2ec6815f-3566-5216-8a25-b5168e8630be",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha1234",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 4,
+    "event_uuid": "908dd4f6-e864-572c-b6f5-8fbb5c1319d4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha12345",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 8,
+    "event_uuid": "62e58e3d-5dd8-522b-9182-ceeac634c2e4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 7,
+    "event_uuid": "5b9ec10b-95f3-5cba-9a2b-7bf3fee49f06",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha1",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 9,
+    "event_uuid": "b94b8127-acaf-5f7e-9fff-62c83a13e128",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:15:53Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "galaxy123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 10,
+    "event_uuid": "12c93da5-870d-547e-a8ba-0b38efbca88c",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:15:34Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "ubuntu",
+    "password_tried": "adminadmin",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 11,
+    "event_uuid": "2ede9a45-fba6-5ece-aac0-d9423f95bb90",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:14:57Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "5.61.209.44",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Wordpress 6.0",
+    "country_code": "NL"
+   },
+   {
+    "id": 12,
+    "event_uuid": "d1f9fbcf-a7b3-5121-ae32-686a832c9817",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:14:36Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "179.43.139.58",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sepehr",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CH"
+   },
+   {
+    "id": 13,
+    "event_uuid": "8eb7ca69-8883-59f8-b90f-a752241ac28e",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:14:16Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "195.182.16.23",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "DE"
+   },
+   {
+    "id": 14,
+    "event_uuid": "eda63c3c-b5e3-5df1-9a6b-5d5e636b24e4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:12:51Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.35.215",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sepehr",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "NL"
+   }
+  ],
+  "is_estimate": false
+ },
+ "/api/v1/events?page_size=14&vps=SENSOR-01": {
+  "total": 42,
+  "page": 1,
+  "page_size": 14,
+  "items": [
+   {
+    "id": 1,
+    "event_uuid": "2023a11d-459f-5801-9107-de68c7892e01",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:18:47Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 2,
+    "event_uuid": "0800fed0-2776-57c4-ac77-a9b2ca516c7b",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:18:21Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "zaq!@#123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 3,
+    "event_uuid": "1a954a43-cae9-5de0-8b20-30d8c3ad7a90",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:17:08Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 6,
+    "event_uuid": "dc0d88da-6449-5526-9ca7-99a828f34c42",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 5,
+    "event_uuid": "2ec6815f-3566-5216-8a25-b5168e8630be",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha1234",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 4,
+    "event_uuid": "908dd4f6-e864-572c-b6f5-8fbb5c1319d4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha12345",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 8,
+    "event_uuid": "62e58e3d-5dd8-522b-9182-ceeac634c2e4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 7,
+    "event_uuid": "5b9ec10b-95f3-5cba-9a2b-7bf3fee49f06",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha1",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 9,
+    "event_uuid": "b94b8127-acaf-5f7e-9fff-62c83a13e128",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:15:53Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "galaxy123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 10,
+    "event_uuid": "12c93da5-870d-547e-a8ba-0b38efbca88c",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:15:34Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "ubuntu",
+    "password_tried": "adminadmin",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 11,
+    "event_uuid": "2ede9a45-fba6-5ece-aac0-d9423f95bb90",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:14:57Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "5.61.209.44",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Wordpress 6.0",
+    "country_code": "NL"
+   },
+   {
+    "id": 12,
+    "event_uuid": "d1f9fbcf-a7b3-5121-ae32-686a832c9817",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:14:36Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "179.43.139.58",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sepehr",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CH"
+   },
+   {
+    "id": 14,
+    "event_uuid": "eda63c3c-b5e3-5df1-9a6b-5d5e636b24e4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:12:51Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.35.215",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sepehr",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "NL"
+   },
+   {
+    "id": 15,
+    "event_uuid": "5c370732-0df5-55c3-9ab6-8be9d44d470f",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:12:45Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "Ab*123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   }
+  ],
+  "is_estimate": false
+ },
+ "/api/v1/events?page_size=14&vps=SENSOR-02": {
+  "total": 7,
+  "page": 1,
+  "page_size": 14,
+  "items": [
+   {
+    "id": 13,
+    "event_uuid": "8eb7ca69-8883-59f8-b90f-a752241ac28e",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:14:16Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "195.182.16.23",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "DE"
+   },
+   {
+    "id": 21,
+    "event_uuid": "dd1e03a4-3bab-5be2-88ef-5b3cc90dc9b0",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:09:15Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "5.61.209.44",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "NL"
+   },
+   {
+    "id": 26,
+    "event_uuid": "004d1bd4-2e99-552e-938b-94eaeef64b6a",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:06:04Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "66.132.195.33",
+    "dst_port": 443,
+    "protocol": "https",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Attendance Portal",
+    "country_code": "US"
+   },
+   {
+    "id": 29,
+    "event_uuid": "a12a6a5d-60b5-5e84-93ef-8341df1a1db5",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:05:16Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "66.132.195.33",
+    "dst_port": 443,
+    "protocol": "https",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Attendance Portal",
+    "country_code": "US"
+   },
+   {
+    "id": 30,
+    "event_uuid": "cbf8fb2a-bc44-530f-acc3-bfda3d02c3ee",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:05:08Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "66.132.195.33",
+    "dst_port": 443,
+    "protocol": "https",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Attendance Portal",
+    "country_code": "US"
+   },
+   {
+    "id": 33,
+    "event_uuid": "54e57995-ae84-5a7d-b077-c0bc07c7f0da",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:03:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "58.34.174.90",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "user",
+    "password_tried": "121212",
+    "payload_excerpt": "SSH interactive ChatGPT",
+    "country_code": "CN"
+   },
+   {
+    "id": 45,
+    "event_uuid": "4e162779-643f-52a6-920d-52d37af2be94",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T05:52:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "204.76.203.30",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "NL"
+   }
+  ],
+  "is_estimate": false
+ },
+ "/api/v1/events?page_size=14&vps=SENSOR-03": {
+  "total": 1,
+  "page": 1,
+  "page_size": 14,
+  "items": [
+   {
+    "id": 49,
+    "event_uuid": "533b4795-6cb6-5497-aefd-a959560e7a38",
+    "vps_id": "0c84d604-48b2-4915-8937-3a47c8c8dfd2",
+    "vps_alias": "SENSOR-03",
+    "occurred_at": "2026-08-17T05:51:08Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "135.119.112.132",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "US"
+   }
+  ],
+  "is_estimate": false
+ },
+ "/api/v1/events?page_size=200": {
+  "total": 50,
+  "page": 1,
+  "page_size": 200,
+  "items": [
+   {
+    "id": 1,
+    "event_uuid": "2023a11d-459f-5801-9107-de68c7892e01",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:18:47Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 2,
+    "event_uuid": "0800fed0-2776-57c4-ac77-a9b2ca516c7b",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:18:21Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "zaq!@#123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 3,
+    "event_uuid": "1a954a43-cae9-5de0-8b20-30d8c3ad7a90",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:17:08Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 6,
+    "event_uuid": "dc0d88da-6449-5526-9ca7-99a828f34c42",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 5,
+    "event_uuid": "2ec6815f-3566-5216-8a25-b5168e8630be",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha1234",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 4,
+    "event_uuid": "908dd4f6-e864-572c-b6f5-8fbb5c1319d4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha12345",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 8,
+    "event_uuid": "62e58e3d-5dd8-522b-9182-ceeac634c2e4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 7,
+    "event_uuid": "5b9ec10b-95f3-5cba-9a2b-7bf3fee49f06",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha1",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 9,
+    "event_uuid": "b94b8127-acaf-5f7e-9fff-62c83a13e128",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:15:53Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "galaxy123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 10,
+    "event_uuid": "12c93da5-870d-547e-a8ba-0b38efbca88c",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:15:34Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "ubuntu",
+    "password_tried": "adminadmin",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 11,
+    "event_uuid": "2ede9a45-fba6-5ece-aac0-d9423f95bb90",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:14:57Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "5.61.209.44",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Wordpress 6.0",
+    "country_code": "NL"
+   },
+   {
+    "id": 12,
+    "event_uuid": "d1f9fbcf-a7b3-5121-ae32-686a832c9817",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:14:36Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "179.43.139.58",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sepehr",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CH"
+   },
+   {
+    "id": 13,
+    "event_uuid": "8eb7ca69-8883-59f8-b90f-a752241ac28e",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:14:16Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "195.182.16.23",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "DE"
+   },
+   {
+    "id": 14,
+    "event_uuid": "eda63c3c-b5e3-5df1-9a6b-5d5e636b24e4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:12:51Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.35.215",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sepehr",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "NL"
+   },
+   {
+    "id": 15,
+    "event_uuid": "5c370732-0df5-55c3-9ab6-8be9d44d470f",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:12:45Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "Ab*123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 16,
+    "event_uuid": "704b6fd6-6ee6-5930-8167-4764b74cc10b",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:12:12Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 17,
+    "event_uuid": "53df7bf0-7a2a-59fc-84c0-af85cf78e058",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:11:53Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "14.1.105.73",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Wordpress 6.0",
+    "country_code": "PK"
+   },
+   {
+    "id": 18,
+    "event_uuid": "309fc41b-3fa8-5780-84d8-30353f7b8323",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:11:11Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "DE"
+   },
+   {
+    "id": 19,
+    "event_uuid": "7837bc0c-9e1b-5850-9ef6-77b623e8147c",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:10:17Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.56",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 20,
+    "event_uuid": "b6eae01d-705b-5949-808c-1835bc40ef4b",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:09:54Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "myuser",
+    "password_tried": "password",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 21,
+    "event_uuid": "dd1e03a4-3bab-5be2-88ef-5b3cc90dc9b0",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:09:15Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "5.61.209.44",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "NL"
+   },
+   {
+    "id": 22,
+    "event_uuid": "6c2dea56-47af-5705-8062-0a22d80bd6ed",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:08:39Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 23,
+    "event_uuid": "8011df91-f46f-58f5-8f31-740c639470d7",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:07:06Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sysadm",
+    "password_tried": "123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 24,
+    "event_uuid": "61eb15a5-e85e-59be-8fbb-c5ea9a1410a3",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:07:00Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "woaini123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 25,
+    "event_uuid": "bb741fce-1dd9-595e-a531-5639fe0aaf41",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:06:10Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "DE"
+   },
+   {
+    "id": 26,
+    "event_uuid": "004d1bd4-2e99-552e-938b-94eaeef64b6a",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:06:04Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "66.132.195.33",
+    "dst_port": 443,
+    "protocol": "https",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Attendance Portal",
+    "country_code": "US"
+   },
+   {
+    "id": 27,
+    "event_uuid": "fc8d6c1e-b588-54d8-8c1f-5709e95086a5",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:05:51Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "qwe@123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 28,
+    "event_uuid": "efd4ae47-fdab-5aed-b8c9-fa6b62c37c0e",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:05:38Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 29,
+    "event_uuid": "a12a6a5d-60b5-5e84-93ef-8341df1a1db5",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:05:16Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "66.132.195.33",
+    "dst_port": 443,
+    "protocol": "https",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Attendance Portal",
+    "country_code": "US"
+   },
+   {
+    "id": 30,
+    "event_uuid": "cbf8fb2a-bc44-530f-acc3-bfda3d02c3ee",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:05:08Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "66.132.195.33",
+    "dst_port": 443,
+    "protocol": "https",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Attendance Portal",
+    "country_code": "US"
+   },
+   {
+    "id": 31,
+    "event_uuid": "18c666fc-15d4-5f6a-9bb8-6c0989a81220",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:04:11Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "superman",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 32,
+    "event_uuid": "7025137f-2d61-5709-9d94-e6c196077fc4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:03:38Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "changeme_123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 33,
+    "event_uuid": "54e57995-ae84-5a7d-b077-c0bc07c7f0da",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:03:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "58.34.174.90",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "user",
+    "password_tried": "121212",
+    "payload_excerpt": "SSH interactive ChatGPT",
+    "country_code": "CN"
+   },
+   {
+    "id": 34,
+    "event_uuid": "6b8c2d56-928f-5d77-9d7c-1682a7fd985d",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:01:40Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 35,
+    "event_uuid": "bd330dec-07dc-5ab2-a573-a5cec0ff17b7",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:01:20Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "zhong",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 36,
+    "event_uuid": "703a2565-db1f-515d-81fe-76dba33ecaeb",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:00:35Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "Tester123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 37,
+    "event_uuid": "2650a257-5393-5938-b482-187307b66d16",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:00:09Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "DE"
+   },
+   {
+    "id": 38,
+    "event_uuid": "ef987ed5-fe4a-5ad4-8667-a9e0b6dcf8c7",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:58:37Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "ansible",
+    "password_tried": "123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 39,
+    "event_uuid": "355dd2f7-046f-546c-8837-c2313ecca48a",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:56:20Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "176.53.159.196",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 40,
+    "event_uuid": "ce5a0833-fbf5-5d9d-a7c6-c77d6a55981d",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:55:54Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "mongodb",
+    "password_tried": "mongodb",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 41,
+    "event_uuid": "de6565de-675a-508b-b0b2-a2b1fa68840b",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:55:45Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 42,
+    "event_uuid": "d70fd2c6-f791-5589-933b-1b3d870c050e",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:54:12Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "DE"
+   },
+   {
+    "id": 43,
+    "event_uuid": "a6ef7a99-8306-5143-a25f-39bb7a624ed0",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:53:15Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "web",
+    "password_tried": "web12345",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 44,
+    "event_uuid": "9aa052da-7546-5e62-b371-0c97b5165071",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:52:40Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.35.215",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sepehr",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "NL"
+   },
+   {
+    "id": 45,
+    "event_uuid": "4e162779-643f-52a6-920d-52d37af2be94",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T05:52:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "204.76.203.30",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "NL"
+   },
+   {
+    "id": 46,
+    "event_uuid": "9dfcefea-daec-5139-8dde-66f28f699f01",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:51:58Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "74.208.149.68",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "jflhi5za",
+    "password_tried": "drHsosw0iIPRMnLcZUwC",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 47,
+    "event_uuid": "15c09c05-9b88-501f-9e6a-2fc71d107cce",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:51:31Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sms",
+    "password_tried": "sms",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 48,
+    "event_uuid": "7a65f144-eae2-54ad-b445-cb474a4bfbce",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:51:15Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 49,
+    "event_uuid": "533b4795-6cb6-5497-aefd-a959560e7a38",
+    "vps_id": "0c84d604-48b2-4915-8937-3a47c8c8dfd2",
+    "vps_alias": "SENSOR-03",
+    "occurred_at": "2026-08-17T05:51:08Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "135.119.112.132",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "US"
+   },
+   {
+    "id": 50,
+    "event_uuid": "7bf664ef-1b04-56ca-b90e-0603f76f5536",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:50:23Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "family",
+    "password_tried": "P@ssw0rd",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   }
+  ],
+  "is_estimate": false
+ },
+ "/api/v1/ips/cross-vps?min_vps=2": [
+  {
+   "ip": "5.61.209.44",
+   "vps_count": 2,
+   "vps_aliases": [
+    "SENSOR-01",
+    "SENSOR-02"
+   ],
+   "total_events": 2,
+   "first_seen_at": "2026-08-17T06:09:15Z",
+   "last_seen_at": "2026-08-17T06:14:57Z",
+   "country_code": "NL",
+   "otx_pulse_count": null,
+   "reputation_score": null,
+   "coordination_score": 71
+  }
+ ],
+ "/api/v1/ips/103.54.56.236": {
+  "ip": "103.54.56.236",
+  "first_seen_at": "2026-08-17T05:50:23Z",
+  "last_seen_at": "2026-08-17T06:18:21Z",
+  "total_events": 11,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "US",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 11,
+    "first_seen_at": "2026-08-17T05:50:23+00:00",
+    "last_seen_at": "2026-08-17T06:18:21+00:00",
+    "protocols": {
+     "ssh": 11
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 2,
+    "event_uuid": "0800fed0-2776-57c4-ac77-a9b2ca516c7b",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:18:21Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "zaq!@#123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 10,
+    "event_uuid": "12c93da5-870d-547e-a8ba-0b38efbca88c",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:15:34Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "ubuntu",
+    "password_tried": "adminadmin",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 15,
+    "event_uuid": "5c370732-0df5-55c3-9ab6-8be9d44d470f",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:12:45Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "Ab*123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 20,
+    "event_uuid": "b6eae01d-705b-5949-808c-1835bc40ef4b",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:09:54Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "myuser",
+    "password_tried": "password",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 24,
+    "event_uuid": "61eb15a5-e85e-59be-8fbb-c5ea9a1410a3",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:07:00Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "woaini123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 31,
+    "event_uuid": "18c666fc-15d4-5f6a-9bb8-6c0989a81220",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:04:11Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "superman",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 35,
+    "event_uuid": "bd330dec-07dc-5ab2-a573-a5cec0ff17b7",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:01:20Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "zhong",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 38,
+    "event_uuid": "ef987ed5-fe4a-5ad4-8667-a9e0b6dcf8c7",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:58:37Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "ansible",
+    "password_tried": "123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 40,
+    "event_uuid": "ce5a0833-fbf5-5d9d-a7c6-c77d6a55981d",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:55:54Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "mongodb",
+    "password_tried": "mongodb",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 43,
+    "event_uuid": "a6ef7a99-8306-5143-a25f-39bb7a624ed0",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:53:15Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "web",
+    "password_tried": "web12345",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   },
+   {
+    "id": 50,
+    "event_uuid": "7bf664ef-1b04-56ca-b90e-0603f76f5536",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:50:23Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "103.54.56.236",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "family",
+    "password_tried": "P@ssw0rd",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   }
+  ]
+ },
+ "/api/v1/ips/120.87.99.202": {
+  "ip": "120.87.99.202",
+  "first_seen_at": "2026-08-17T05:51:31Z",
+  "last_seen_at": "2026-08-17T06:15:53Z",
+  "total_events": 6,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "CN",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 6,
+    "first_seen_at": "2026-08-17T05:51:31+00:00",
+    "last_seen_at": "2026-08-17T06:15:53+00:00",
+    "protocols": {
+     "ssh": 6
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 9,
+    "event_uuid": "b94b8127-acaf-5f7e-9fff-62c83a13e128",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:15:53Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "galaxy123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 23,
+    "event_uuid": "8011df91-f46f-58f5-8f31-740c639470d7",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:07:06Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sysadm",
+    "password_tried": "123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 27,
+    "event_uuid": "fc8d6c1e-b588-54d8-8c1f-5709e95086a5",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:05:51Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "qwe@123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 32,
+    "event_uuid": "7025137f-2d61-5709-9d94-e6c196077fc4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:03:38Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "changeme_123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 36,
+    "event_uuid": "703a2565-db1f-515d-81fe-76dba33ecaeb",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:00:35Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "Tester123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   },
+   {
+    "id": 47,
+    "event_uuid": "15c09c05-9b88-501f-9e6a-2fc71d107cce",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:51:31Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "120.87.99.202",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sms",
+    "password_tried": "sms",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CN"
+   }
+  ]
+ },
+ "/api/v1/ips/135.119.112.132": {
+  "ip": "135.119.112.132",
+  "first_seen_at": "2026-08-17T05:51:08Z",
+  "last_seen_at": "2026-08-17T05:51:08Z",
+  "total_events": 1,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "US",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-03",
+    "display_name": "Sensor 03",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T05:51:08+00:00",
+    "last_seen_at": "2026-08-17T05:51:08+00:00",
+    "protocols": {
+     "http": 1
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 49,
+    "event_uuid": "533b4795-6cb6-5497-aefd-a959560e7a38",
+    "vps_id": "0c84d604-48b2-4915-8937-3a47c8c8dfd2",
+    "vps_alias": "SENSOR-03",
+    "occurred_at": "2026-08-17T05:51:08Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "135.119.112.132",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "US"
+   }
+  ]
+ },
+ "/api/v1/ips/14.1.105.73": {
+  "ip": "14.1.105.73",
+  "first_seen_at": "2026-08-17T06:11:53Z",
+  "last_seen_at": "2026-08-17T06:11:53Z",
+  "total_events": 1,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "PK",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T06:11:53+00:00",
+    "last_seen_at": "2026-08-17T06:11:53+00:00",
+    "protocols": {
+     "http": 1
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 17,
+    "event_uuid": "53df7bf0-7a2a-59fc-84c0-af85cf78e058",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:11:53Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "14.1.105.73",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Wordpress 6.0",
+    "country_code": "PK"
+   }
+  ]
+ },
+ "/api/v1/ips/176.53.159.196": {
+  "ip": "176.53.159.196",
+  "first_seen_at": "2026-08-17T05:56:20Z",
+  "last_seen_at": "2026-08-17T05:56:20Z",
+  "total_events": 1,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "TR",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T05:56:20+00:00",
+    "last_seen_at": "2026-08-17T05:56:20+00:00",
+    "protocols": {
+     "ssh": 1
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 39,
+    "event_uuid": "355dd2f7-046f-546c-8837-c2313ecca48a",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:56:20Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "176.53.159.196",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   }
+  ]
+ },
+ "/api/v1/ips/179.43.139.58": {
+  "ip": "179.43.139.58",
+  "first_seen_at": "2026-08-17T06:14:36Z",
+  "last_seen_at": "2026-08-17T06:14:36Z",
+  "total_events": 1,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "CH",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T06:14:36+00:00",
+    "last_seen_at": "2026-08-17T06:14:36+00:00",
+    "protocols": {
+     "ssh": 1
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 12,
+    "event_uuid": "d1f9fbcf-a7b3-5121-ae32-686a832c9817",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:14:36Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "179.43.139.58",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sepehr",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "CH"
+   }
+  ]
+ },
+ "/api/v1/ips/195.182.16.23": {
+  "ip": "195.182.16.23",
+  "first_seen_at": "2026-08-17T06:14:16Z",
+  "last_seen_at": "2026-08-17T06:14:16Z",
+  "total_events": 1,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "DE",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-02",
+    "display_name": "Sensor 02",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T06:14:16+00:00",
+    "last_seen_at": "2026-08-17T06:14:16+00:00",
+    "protocols": {
+     "http": 1
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 13,
+    "event_uuid": "8eb7ca69-8883-59f8-b90f-a752241ac28e",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:14:16Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "195.182.16.23",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "DE"
+   }
+  ]
+ },
+ "/api/v1/ips/2.57.121.112": {
+  "ip": "2.57.121.112",
+  "first_seen_at": "2026-08-17T06:16:02Z",
+  "last_seen_at": "2026-08-17T06:16:03Z",
+  "total_events": 5,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "GB",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 5,
+    "first_seen_at": "2026-08-17T06:16:02+00:00",
+    "last_seen_at": "2026-08-17T06:16:03+00:00",
+    "protocols": {
+     "ssh": 5
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 4,
+    "event_uuid": "908dd4f6-e864-572c-b6f5-8fbb5c1319d4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha12345",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 5,
+    "event_uuid": "2ec6815f-3566-5216-8a25-b5168e8630be",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha1234",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 6,
+    "event_uuid": "dc0d88da-6449-5526-9ca7-99a828f34c42",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha123",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 7,
+    "event_uuid": "5b9ec10b-95f3-5cba-9a2b-7bf3fee49f06",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha1",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   },
+   {
+    "id": 8,
+    "event_uuid": "62e58e3d-5dd8-522b-9182-ceeac634c2e4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:16:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "2.57.121.112",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "bertha",
+    "password_tried": "bertha",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "GB"
+   }
+  ]
+ },
+ "/api/v1/ips/204.76.203.30": {
+  "ip": "204.76.203.30",
+  "first_seen_at": "2026-08-17T05:52:02Z",
+  "last_seen_at": "2026-08-17T05:52:02Z",
+  "total_events": 1,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "NL",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-02",
+    "display_name": "Sensor 02",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T05:52:02+00:00",
+    "last_seen_at": "2026-08-17T05:52:02+00:00",
+    "protocols": {
+     "http": 1
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 45,
+    "event_uuid": "4e162779-643f-52a6-920d-52d37af2be94",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T05:52:02Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "204.76.203.30",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "NL"
+   }
+  ]
+ },
+ "/api/v1/ips/5.61.209.44": {
+  "ip": "5.61.209.44",
+  "first_seen_at": "2026-08-17T06:09:15Z",
+  "last_seen_at": "2026-08-17T06:14:57Z",
+  "total_events": 2,
+  "vps_count": 2,
+  "is_cross_vps": true,
+  "country_code": "NL",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-02",
+    "display_name": "Sensor 02",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T06:09:15+00:00",
+    "last_seen_at": "2026-08-17T06:09:15+00:00",
+    "protocols": {
+     "http": 1
+    }
+   },
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T06:14:57+00:00",
+    "last_seen_at": "2026-08-17T06:14:57+00:00",
+    "protocols": {
+     "http": 1
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 71,
+  "recent_events": [
+   {
+    "id": 11,
+    "event_uuid": "2ede9a45-fba6-5ece-aac0-d9423f95bb90",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:14:57Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "5.61.209.44",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Wordpress 6.0",
+    "country_code": "NL"
+   },
+   {
+    "id": 21,
+    "event_uuid": "dd1e03a4-3bab-5be2-88ef-5b3cc90dc9b0",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:09:15Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "5.61.209.44",
+    "dst_port": 80,
+    "protocol": "http",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Apache 401",
+    "country_code": "NL"
+   }
+  ]
+ },
+ "/api/v1/ips/58.34.174.90": {
+  "ip": "58.34.174.90",
+  "first_seen_at": "2026-08-17T06:03:03Z",
+  "last_seen_at": "2026-08-17T06:03:03Z",
+  "total_events": 1,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "CN",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-02",
+    "display_name": "Sensor 02",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T06:03:03+00:00",
+    "last_seen_at": "2026-08-17T06:03:03+00:00",
+    "protocols": {
+     "ssh": 1
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 33,
+    "event_uuid": "54e57995-ae84-5a7d-b077-c0bc07c7f0da",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:03:03Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "58.34.174.90",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "user",
+    "password_tried": "121212",
+    "payload_excerpt": "SSH interactive ChatGPT",
+    "country_code": "CN"
+   }
+  ]
+ },
+ "/api/v1/ips/66.132.195.33": {
+  "ip": "66.132.195.33",
+  "first_seen_at": "2026-08-17T06:05:08Z",
+  "last_seen_at": "2026-08-17T06:06:04Z",
+  "total_events": 3,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "US",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-02",
+    "display_name": "Sensor 02",
+    "event_count": 3,
+    "first_seen_at": "2026-08-17T06:05:08+00:00",
+    "last_seen_at": "2026-08-17T06:06:04+00:00",
+    "protocols": {
+     "https": 3
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 26,
+    "event_uuid": "004d1bd4-2e99-552e-938b-94eaeef64b6a",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:06:04Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "66.132.195.33",
+    "dst_port": 443,
+    "protocol": "https",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Attendance Portal",
+    "country_code": "US"
+   },
+   {
+    "id": 29,
+    "event_uuid": "a12a6a5d-60b5-5e84-93ef-8341df1a1db5",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:05:16Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "66.132.195.33",
+    "dst_port": 443,
+    "protocol": "https",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Attendance Portal",
+    "country_code": "US"
+   },
+   {
+    "id": 30,
+    "event_uuid": "cbf8fb2a-bc44-530f-acc3-bfda3d02c3ee",
+    "vps_id": "13539c28-65b5-419e-9db2-25f39eb2346a",
+    "vps_alias": "SENSOR-02",
+    "occurred_at": "2026-08-17T06:05:08Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "66.132.195.33",
+    "dst_port": 443,
+    "protocol": "https",
+    "event_type": "http_scan",
+    "severity": 1,
+    "username_tried": null,
+    "password_tried": null,
+    "payload_excerpt": "Attendance Portal",
+    "country_code": "US"
+   }
+  ]
+ },
+ "/api/v1/ips/74.208.149.68": {
+  "ip": "74.208.149.68",
+  "first_seen_at": "2026-08-17T05:51:58Z",
+  "last_seen_at": "2026-08-17T05:51:58Z",
+  "total_events": 1,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "US",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T05:51:58+00:00",
+    "last_seen_at": "2026-08-17T05:51:58+00:00",
+    "protocols": {
+     "ssh": 1
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 46,
+    "event_uuid": "9dfcefea-daec-5139-8dde-66f28f699f01",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:51:58Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "74.208.149.68",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "jflhi5za",
+    "password_tried": "drHsosw0iIPRMnLcZUwC",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "US"
+   }
+  ]
+ },
+ "/api/v1/ips/89.163.204.62": {
+  "ip": "89.163.204.62",
+  "first_seen_at": "2026-08-17T05:54:12Z",
+  "last_seen_at": "2026-08-17T06:17:08Z",
+  "total_events": 5,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "DE",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 5,
+    "first_seen_at": "2026-08-17T05:54:12+00:00",
+    "last_seen_at": "2026-08-17T06:17:08+00:00",
+    "protocols": {
+     "ssh": 5
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 3,
+    "event_uuid": "1a954a43-cae9-5de0-8b20-30d8c3ad7a90",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:17:08Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 18,
+    "event_uuid": "309fc41b-3fa8-5780-84d8-30353f7b8323",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:11:11Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "DE"
+   },
+   {
+    "id": 25,
+    "event_uuid": "bb741fce-1dd9-595e-a531-5639fe0aaf41",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:06:10Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "DE"
+   },
+   {
+    "id": 37,
+    "event_uuid": "2650a257-5393-5938-b482-187307b66d16",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:00:09Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "DE"
+   },
+   {
+    "id": 42,
+    "event_uuid": "d70fd2c6-f791-5589-933b-1b3d870c050e",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:54:12Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "89.163.204.62",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "root",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "DE"
+   }
+  ]
+ },
+ "/api/v1/ips/94.154.35.215": {
+  "ip": "94.154.35.215",
+  "first_seen_at": "2026-08-17T05:52:40Z",
+  "last_seen_at": "2026-08-17T06:12:51Z",
+  "total_events": 2,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "NL",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 2,
+    "first_seen_at": "2026-08-17T05:52:40+00:00",
+    "last_seen_at": "2026-08-17T06:12:51+00:00",
+    "protocols": {
+     "ssh": 2
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 14,
+    "event_uuid": "eda63c3c-b5e3-5df1-9a6b-5d5e636b24e4",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:12:51Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.35.215",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sepehr",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "NL"
+   },
+   {
+    "id": 44,
+    "event_uuid": "9aa052da-7546-5e62-b371-0c97b5165071",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:52:40Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.35.215",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "sepehr",
+    "password_tried": "123456",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "NL"
+   }
+  ]
+ },
+ "/api/v1/ips/94.154.43.16": {
+  "ip": "94.154.43.16",
+  "first_seen_at": "2026-08-17T05:51:15Z",
+  "last_seen_at": "2026-08-17T06:18:47Z",
+  "total_events": 7,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "TR",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 7,
+    "first_seen_at": "2026-08-17T05:51:15+00:00",
+    "last_seen_at": "2026-08-17T06:18:47+00:00",
+    "protocols": {
+     "ssh": 7
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 1,
+    "event_uuid": "2023a11d-459f-5801-9107-de68c7892e01",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:18:47Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": null
+   },
+   {
+    "id": 16,
+    "event_uuid": "704b6fd6-6ee6-5930-8167-4764b74cc10b",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:12:12Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 22,
+    "event_uuid": "6c2dea56-47af-5705-8062-0a22d80bd6ed",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:08:39Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 28,
+    "event_uuid": "efd4ae47-fdab-5aed-b8c9-fa6b62c37c0e",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:05:38Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 34,
+    "event_uuid": "6b8c2d56-928f-5d77-9d7c-1682a7fd985d",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:01:40Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 41,
+    "event_uuid": "de6565de-675a-508b-b0b2-a2b1fa68840b",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:55:45Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   },
+   {
+    "id": 48,
+    "event_uuid": "7a65f144-eae2-54ad-b445-cb474a4bfbce",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T05:51:15Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.16",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   }
+  ]
+ },
+ "/api/v1/ips/94.154.43.56": {
+  "ip": "94.154.43.56",
+  "first_seen_at": "2026-08-17T06:10:17Z",
+  "last_seen_at": "2026-08-17T06:10:17Z",
+  "total_events": 1,
+  "vps_count": 1,
+  "is_cross_vps": false,
+  "country_code": "TR",
+  "asn": null,
+  "vps_breakdown": [
+   {
+    "vps_alias": "SENSOR-01",
+    "display_name": "Sensor 01",
+    "event_count": 1,
+    "first_seen_at": "2026-08-17T06:10:17+00:00",
+    "last_seen_at": "2026-08-17T06:10:17+00:00",
+    "protocols": {
+     "ssh": 1
+    }
+   }
+  ],
+  "threat_intel": null,
+  "coordination_score": 0,
+  "recent_events": [
+   {
+    "id": 19,
+    "event_uuid": "7837bc0c-9e1b-5850-9ef6-77b623e8147c",
+    "vps_id": "6dd03e1e-74f6-4e6f-93cc-25a8a537577c",
+    "vps_alias": "SENSOR-01",
+    "occurred_at": "2026-08-17T06:10:17Z",
+    "received_at": "2026-08-17T07:39:18.655917Z",
+    "src_ip": "94.154.43.56",
+    "dst_port": 22,
+    "protocol": "ssh",
+    "event_type": "ssh_login_attempt",
+    "severity": 1,
+    "username_tried": "support",
+    "password_tried": "support",
+    "payload_excerpt": "SSH interactive ubuntu",
+    "country_code": "TR"
+   }
+  ]
+ }
+}
