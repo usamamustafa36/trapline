@@ -74,6 +74,7 @@ export default function CrossVpsPage() {
           <div className="inline-flex overflow-hidden rounded border border-line">
             {SORTS.map((s) => (
               <button
+                  type="button"
                 key={s.key}
                 onClick={() => setSort(s.key)}
                 className={cn(

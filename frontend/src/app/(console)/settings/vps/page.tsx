@@ -140,6 +140,7 @@ export default function SettingsVpsPage() {
                 secret
               />
               <button
+                  type="button"
                 onClick={() => register.mutate()}
                 disabled={!form.alias || !form.display_name || !admin || register.isPending}
                 className="mt-1 inline-flex items-center justify-center gap-2 rounded border border-signal/50 bg-signal/15 py-2.5 font-mono text-[12px] font-semibold uppercase tracking-wider text-signal transition-colors hover:bg-signal/25 disabled:cursor-not-allowed disabled:opacity-40"
@@ -162,7 +163,10 @@ export default function SettingsVpsPage() {
               </p>
               <div className="flex items-center gap-2 rounded border border-signal/40 bg-black/40 p-2">
                 <code className="flex-1 break-all font-mono text-[11px] text-ops">{issued.api_key}</code>
-                <button onClick={copyKey} className="shrink-0 rounded border border-line p-1.5 text-dim hover:text-fg">
+                <button
+                  type="button" onClick={copyKey} aria-label="Copy API key"
+                  title="Copy API key"
+                  className="shrink-0 rounded border border-line p-1.5 text-dim hover:text-fg">
                   {copied ? <Check className="h-4 w-4 text-ops" /> : <Copy className="h-4 w-4" />}
                 </button>
               </div>

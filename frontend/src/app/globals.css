@@ -103,6 +103,46 @@ body::after {
   color: #05140a;
 }
 
+@layer base {
+  /*
+   * Keyboard focus. No focus styling existed, so the browser default 1px outline
+   * was near-invisible against the dark surfaces. focus-visible keeps pointer
+   * clicks clean while giving keyboard users a ring they can actually see.
+   */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid #9fef00;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /*
+   * Data-table targets. Rows are tall enough, but an anchor's own box was only as
+   * tall as its text line (18px), so the real hit area was smaller than it looked.
+   * Filling to 24px matches the visible row without changing table density.
+   */
+  :where(td) a,
+  :where(td) button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+  }
+
+  /* Small control buttons: hold the 24px minimum without altering their padding. */
+  :where(button):not(:disabled) {
+    min-height: 24px;
+  }
+
+  /* Respect a reduced-motion preference across the console's transitions. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
 @layer components {
   /* Modern card material — flatter, more solid, soft rounded depth.
      A faint top sheen reads as a light source without heavy blur. */

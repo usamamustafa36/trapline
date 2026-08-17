@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { vpsColor } from "@/lib/theme";
 import type { CrossVpsIp } from "@/lib/types";
-import { flag, fmtInt, relTime } from "@/lib/utils";
+import { flag, fmtInt, relTime, shortAlias } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
 import { CoordinationGauge, ReputationBadge } from "@/components/ui/indicators";
 import { Empty } from "@/components/ui/states";
@@ -49,11 +49,11 @@ export function TopIpsTable({
                   {ip.vps_aliases.map((a) => (
                     <span
                       key={a}
-                      className="grid h-4 w-6 place-items-center rounded-[3px] font-mono text-[9px] font-bold text-void"
+                      className="grid h-4 min-w-[22px] place-items-center rounded-[3px] px-1 font-mono text-[9px] font-bold leading-none text-void"
                       style={{ background: vpsColor(a) }}
                       title={a}
                     >
-                      {a}
+                      {shortAlias(a)}
                     </span>
                   ))}
                 </div>

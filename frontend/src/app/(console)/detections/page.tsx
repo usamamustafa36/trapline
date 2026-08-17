@@ -79,6 +79,7 @@ export default function DetectionsPage() {
         <div className="mt-4 flex flex-wrap gap-2">
           <a
             href={api.sigmaYamlUrl()}
+            download="trapline-sigma.yml"
             className="flex items-center gap-2 rounded-lg border border-signal/30 bg-signal/10 px-3 py-2 font-mono text-[12px] text-signal transition-colors hover:bg-signal/20"
           >
             <Download className="h-3.5 w-3.5" /> trapline-sigma.yml
@@ -116,7 +117,10 @@ export default function DetectionsPage() {
                 className="overflow-hidden rounded-xl border border-white/[0.06] bg-black/20"
               >
                 <button
+                  type="button"
                   onClick={() => setOpen(isOpen ? null : r.id)}
+                  aria-expanded={isOpen}
+                  aria-controls={`rule-${r.id}`}
                   className="flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors hover:bg-white/[0.03]"
                 >
                   <ChevronRight
@@ -139,7 +143,7 @@ export default function DetectionsPage() {
                   </span>
                 </button>
                 {isOpen && (
-                  <div className="border-t border-white/[0.06] px-3 py-3">
+                  <div id={`rule-${r.id}`} className="border-t border-white/[0.06] px-3 py-3">
                     <p className="text-[12.5px] leading-relaxed text-dim">{r.description}</p>
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       {r.tags.map((t) => (
@@ -155,7 +159,7 @@ export default function DetectionsPage() {
                           }
                           target="_blank"
                           rel="noreferrer"
-                          className="rounded border border-signal/25 bg-signal/[0.08] px-1.5 py-0.5 font-mono text-[10px] text-signal hover:bg-signal/20"
+                          className="inline-flex min-h-[24px] items-center rounded border border-signal/25 bg-signal/[0.08] px-2 py-0.5 font-mono text-[10px] text-signal transition-colors hover:bg-signal/20"
                         >
                           {t}
                         </a>

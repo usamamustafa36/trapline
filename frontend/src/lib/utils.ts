@@ -93,3 +93,17 @@ export function scoreLabel(score: number): { label: string; color: string } {
   if (score >= 15) return { label: "LINKED", color: "#54AEFF" };
   return { label: "SCATTERED", color: "#6C82A0" };
 }
+
+
+/**
+ * Short badge label for a sensor alias.
+ *
+ * Badges are only a couple of characters wide. Three-letter aliases fitted, but
+ * "SENSOR-02" overflowed and clipped to an unreadable "SENSO". Prefer the trailing
+ * number, which is the part that actually distinguishes one sensor from another.
+ */
+export function shortAlias(alias: string): string {
+  const digits = alias.match(/(\d+)\s*$/);
+  if (digits) return digits[1].slice(-2);
+  return alias.replace(/[^A-Za-z0-9]/g, "").slice(0, 3).toUpperCase();
+}

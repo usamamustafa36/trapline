@@ -21,6 +21,7 @@ export function WindowToggle({
     <div className="inline-flex items-center gap-0.5 rounded-full border border-white/[0.07] bg-black/25 p-1 backdrop-blur">
       {OPTS.map(({ key, label }) => (
         <button
+                  type="button"
           key={key}
           onClick={() => onChange(key)}
           className={cn(

@@ -237,18 +237,31 @@ export default function ReportsPage() {
 
               <div className="mt-1 flex gap-2">
                 <button
+                  type="button"
                   onClick={() => setApplied({ ...draft })}
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-signal px-4 py-2.5 font-mono text-[12px] font-bold uppercase tracking-wider text-void shadow-glow-signal transition-transform hover:scale-[1.01] active:scale-[0.99]"
+                  disabled={report.isFetching}
+                  aria-busy={report.isFetching}
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-signal px-4 py-2.5 font-mono text-[12px] font-bold uppercase tracking-wider text-void shadow-glow-signal transition-transform hover:scale-[1.01] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none disabled:hover:scale-100"
                 >
-                  <Play className="h-3.5 w-3.5 fill-current" /> Compile
+                  {report.isFetching ? (
+                    <>
+                      <RotateCcw className="h-3.5 w-3.5 animate-spin" /> Compiling
+                    </>
+                  ) : (
+                    <>
+                      <Play className="h-3.5 w-3.5 fill-current" /> Compile
+                    </>
+                  )}
                 </button>
                 <button
+                  type="button"
                   onClick={() => {
                     setDraft(EMPTY);
                     setApplied(null);
                   }}
                   className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-muted transition-colors hover:border-white/[0.14] hover:text-fg"
                   title="Reset filters"
+                  aria-label="Reset filters"
                 >
                   <RotateCcw className="h-3.5 w-3.5" />
                 </button>
@@ -272,12 +285,14 @@ export default function ReportsPage() {
               report.data ? (
                 <div className="flex items-center gap-2">
                   <button
+                  type="button"
                     onClick={download}
                     className="inline-flex items-center gap-1.5 rounded-full border border-ops/40 bg-ops/10 px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-ops transition-colors hover:bg-ops/20"
                   >
                     <Download className="h-3.5 w-3.5" /> CSV
                   </button>
                   <button
+                  type="button"
                     onClick={() => window.print()}
                     className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-dim transition-colors hover:text-fg"
                   >
@@ -444,6 +459,7 @@ function PageButton({
 }) {
   return (
     <button
+                  type="button"
       onClick={onClick}
       disabled={disabled}
       className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-dim transition-colors hover:bg-white/[0.06] hover:text-fg disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:bg-transparent disabled:hover:text-dim"

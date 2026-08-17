@@ -256,7 +256,7 @@ export default function AnalysisPage() {
                     href={`https://attack.mitre.org/techniques/${p.attck.replace(".", "/")}/`}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded border border-signal/30 bg-signal/10 px-1.5 py-0.5 font-mono text-[10px] text-signal hover:bg-signal/20"
+                    className="inline-flex min-h-[24px] items-center rounded border border-signal/30 bg-signal/10 px-2 py-0.5 font-mono text-[10px] text-signal transition-colors hover:bg-signal/20"
                   >
                     {p.attck}
                   </a>

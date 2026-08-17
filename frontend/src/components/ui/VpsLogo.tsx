@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { vpsColor } from "@/lib/theme";
+import { shortAlias } from "@/lib/utils";
 
 type VpsLogoProps = {
   alias: string;
@@ -34,7 +35,7 @@ export function VpsLogo({ alias, size = "md", className, showFallback = true }: 
       style={{ background: vpsColor(alias) }}
       title={alias}
     >
-      {alias.slice(0, 3)}
+      {shortAlias(alias)}
     </div>
   );
 }
