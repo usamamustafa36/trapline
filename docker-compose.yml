@@ -1,0 +1,58 @@
+services:
+  central-db:
+    image: postgres:16-alpine
+    container_name: lure_c2_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-lure}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lure}
+      POSTGRES_DB: ${POSTGRES_DB:-trapline}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lure} -d ${POSTGRES_DB:-trapline}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  central-api:
+    build: ./backend
+    container_name: lure_c2_api
+    depends_on:
+      central-db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-lure}:${POSTGRES_PASSWORD:-lure}@central-db:5432/${POSTGRES_DB:-trapline}
+      SECRET_KEY: ${SECRET_KEY:-change-me-in-prod-please-0000000000000000}
+      FERNET_KEY: ${FERNET_KEY:-}
+      SEED_ON_START: ${SEED_ON_START:-false}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost}
+    restart: unless-stopped
+
+  dashboard:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_BASE: ${NEXT_PUBLIC_API_BASE:-http://localhost/api/v1}
+    container_name: lure_c2_dashboard
+    depends_on:
+      - central-api
+    environment:
+      NEXT_PUBLIC_API_BASE: ${NEXT_PUBLIC_API_BASE:-http://localhost/api/v1}
+      API_INTERNAL_BASE: http://central-api:8000/api/v1
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: lure_c2_nginx
+    depends_on:
+      - central-api
+      - dashboard
+    ports:
+      - "${HTTP_PORT:-80}:80"
+    volumes:
+      - ./deploy/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped
+
+volumes:
+  pgdata:

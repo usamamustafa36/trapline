@@ -1,0 +1,21 @@
+[Unit]
+Description=Trapline PostgreSQL Shipper (SENSOR-03 events table → Central C2)
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=trapline
+Group=trapline
+WorkingDirectory=/opt/trapline-shipper
+ExecStart=/opt/trapline-shipper/.venv/bin/python /opt/trapline-shipper/shipper_pg.py --config /etc/trapline/config.postgres.yaml
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/trapline
+StateDirectory=trapline
+
+[Install]
+WantedBy=multi-user.target

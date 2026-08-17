@@ -1,0 +1,27 @@
+# Trapline PostgreSQL shipper — for sensors that write events straight to Postgres.
+# Copy to config.postgres.yaml and fill in the values for the SENSOR-03 node.
+
+# Central ingestion API base (include /api/v1).
+central_url: "https://your-central-platform/api/v1"
+
+# Per-VPS bearer key issued by POST /api/v1/vps/register (Settings → Deploy Sensor).
+api_key: "lsk_REPLACE_WITH_SENSOR_03_KEY"
+
+# SENSOR-03's honeypot PostgreSQL DSN (same DATABASE_URL the Vector honeypot writes to).
+database_url: "postgresql://lure:lure@localhost:5432/trapline"
+
+# First-run behaviour when no checkpoint exists:
+#   now       → only ship events inserted from now on (default)
+#   beginning → backfill the entire events table (safe; central dedupes)
+#   <ISO ts>  → backfill from a specific timestamp, e.g. 2026-06-01T00:00:00Z
+start_from: "now"
+
+# Ship / heartbeat cadence and batch cap (central caps at 500).
+batch_interval_seconds: 45
+max_batch: 500
+
+# State files (keep on persistent local disk).
+checkpoint_path: "/var/lib/trapline/shipper_pg.checkpoint"
+buffer_path: "/var/lib/trapline/shipper_pg.buffer.jsonl"
+
+verify_tls: true

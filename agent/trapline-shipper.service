@@ -1,0 +1,22 @@
+[Unit]
+Description=Trapline Shipper Agent (sensor log → central API)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=trapline
+Group=trapline
+WorkingDirectory=/opt/trapline-shipper
+ExecStart=/opt/trapline-shipper/.venv/bin/python /opt/trapline-shipper/shipper.py --config /etc/trapline/config.yaml
+Restart=always
+RestartSec=10
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/trapline
+StateDirectory=trapline
+
+[Install]
+WantedBy=multi-user.target

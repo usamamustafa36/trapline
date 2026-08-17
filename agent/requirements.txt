@@ -1,0 +1,6 @@
+# Log-tail shipper (SENSOR-01, SENSOR-02) needs:
+requests>=2.31
+PyYAML>=6.0
+
+# PostgreSQL shipper (SENSOR-03, shipper_pg.py) additionally needs:
+psycopg2-binary>=2.9

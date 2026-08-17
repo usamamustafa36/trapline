@@ -1,0 +1,24 @@
+# Trapline shipper agent — per-VPS configuration.
+# Copy to config.yaml and fill in the values for THIS honeypot node.
+
+# Central ingestion API base (include /api/v1).
+central_url: "https://your-central-platform/api/v1"
+
+# Per-VPS bearer key issued by POST /api/v1/vps/register (Settings → Deploy Sensor).
+api_key: "lsk_REPLACE_WITH_YOUR_KEY"
+
+# Path to the sensor's JSON-lines event log.
+logs_path: "/opt/honeypot/logs/events.log"
+
+# How often to ship batches / heartbeat (seconds).
+batch_interval_seconds: 45
+
+# Max events per POST (central caps at 500).
+max_batch: 500
+
+# State files (keep on persistent local disk).
+checkpoint_path: "/var/lib/trapline/shipper.checkpoint"
+buffer_path: "/var/lib/trapline/shipper.buffer.jsonl"
+
+# Verify the central platform's TLS cert (set false only for self-signed dev).
+verify_tls: true

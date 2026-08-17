@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Node / Next
+node_modules/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+next-env.d.ts
+
+# Env & secrets
+.env
+.env.local
+*.local
+agent/config.yaml
+agent/*.checkpoint
+deploy/agents/configs/*.yaml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Runtime
+pgdata/
+*.log
+.run/*.pid
+.run/pgdata/
+.logs/
+
+# Large data exports (keep local; do not push)
+exports/*.gz
+exports/*.ndjson
+exports/*.ndjson.gz
