@@ -31,6 +31,9 @@ from app.main import app  # noqa: E402
 
 WINDOWS = ["24h", "7d", "30d", "all"]
 EVENTS_PAGE_SIZE = 14  # matches what the console requests
+#: Per-address profiles are the only part of the snapshot that scales with the
+#: dataset, so they are bounded. Everything else is a fixed set of aggregates.
+MAX_ADDRESS_PROFILES = 400
 DEFAULT_OUT = (
     Path(__file__).resolve().parents[2] / "frontend" / "src" / "demo-snapshot.json"
 )
@@ -49,6 +52,10 @@ def main() -> None:
     client = TestClient(app)
     snapshot: dict[str, object] = {}
     misses: list[str] = []
+    notes: list[str] = []
+
+    def _note(msg: str) -> None:
+        notes.append(msg)
 
     def grab(path: str, params: dict[str, object] | None = None) -> object | None:
         response = client.get(path, params=params)
@@ -90,8 +97,30 @@ def main() -> None:
             if isinstance(event, dict) and event.get("src_ip"):
                 addresses.add(str(event["src_ip"]))
 
-    for address in sorted(addresses):
+    # Cap per-address profiles. This is the only part of the snapshot that grows with
+    # the dataset, so it is bounded to the addresses actually reachable from the UI:
+    # the top-address lists, the cross-sensor view, and the event feed. Anything else
+    # falls back gracefully in the route handler.
+    capped = sorted(addresses)[:MAX_ADDRESS_PROFILES]
+    for address in capped:
         grab(f"/api/v1/ips/{address}")
+    if len(addresses) > len(capped):
+        _note(f"address profiles capped at {len(capped)} of {len(addresses)}")
+
+    # Analysis and generated detection content, which the Analysis and Detections
+    # views depend on. These are single aggregate responses, so they add little size.
+    grab("/api/v1/analysis/report")
+    grab("/api/v1/analysis/overview")
+    grab("/api/v1/analysis/coordination", {"limit": 40})
+    grab("/api/v1/analysis/clients")
+    grab("/api/v1/analysis/credentials")
+    grab("/api/v1/analysis/guessing")
+    grab("/api/v1/analysis/commands")
+    grab("/api/v1/analysis/rhythm")
+    grab("/api/v1/analysis/http")
+    grab("/api/v1/detections/sigma")
+    grab("/api/v1/detections/blocklist")
+    grab("/api/v1/detections/stix")
 
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(snapshot, indent=1, default=str), encoding="utf-8")
@@ -100,6 +129,8 @@ def main() -> None:
     print(f"[snapshot] {len(snapshot)} response(s) captured")
     print(f"[snapshot] {len(aliases)} sensor(s), {len(addresses)} address profile(s)")
     print(f"[snapshot] written to {out} ({size_kb:.0f} KB)")
+    for n in notes:
+        print(f"[snapshot] {n}")
     if misses:
         print(f"[snapshot] {len(misses)} endpoint(s) did not return 200:")
         for miss in misses:
