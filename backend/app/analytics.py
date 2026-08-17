@@ -47,6 +47,7 @@ from typing import Any
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
+from .config import settings
 from .database import SessionLocal
 from .models import Event, VpsSource
 
@@ -473,9 +474,19 @@ def overview(db: Session) -> dict[str, Any]:
             func.count(func.distinct(Event.src_ip)),
         ).join(Event, Event.vps_id == VpsSource.id).group_by(VpsSource.alias)
     ).all()
+    window_start = db.scalar(select(func.min(Event.occurred_at)))
+    window_end = db.scalar(select(func.max(Event.occurred_at)))
     return {
         "events": db.scalar(select(func.count(Event.id))) or 0,
         "addresses": db.scalar(select(func.count(func.distinct(Event.src_ip)))) or 0,
+        # Stated explicitly so the console can label an archived capture as archived
+        # rather than implying a live fleet.
+        "dataset": {
+            "archived": bool(settings.dataset_mode),
+            "window_start": str(window_start) if window_start else None,
+            "window_end": str(window_end) if window_end else None,
+            "days": (window_end - window_start).days if window_start and window_end else 0,
+        },
         "sensors": [
             {
                 "alias": a,

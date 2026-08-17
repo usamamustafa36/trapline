@@ -20,6 +20,15 @@ class Settings(BaseSettings):
     # Behaviour — demo data is OFF by default; production stays clean and fills
     # only from real shipper ingestion. Opt in with SEED_ON_START=true for a demo.
     seed_on_start: bool = False
+
+    # Archived-dataset mode. When the console is showing a historical capture rather
+    # than a live fleet, wall-clock recency makes every sensor read "offline" forever,
+    # which is both useless and misleading. With this on, sensor status is computed
+    # relative to the newest event in the dataset, so "reporting" means the sensor was
+    # still shipping at the end of the capture window and "stopped" means it died
+    # partway through. The UI labels the dataset as archived either way; it never
+    # claims to be live.
+    dataset_mode: bool = False
     api_key_prefix: str = "lsk_"  # Trapline key
 
     # Ingestion guardrails

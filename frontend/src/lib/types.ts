@@ -175,8 +175,22 @@ export type LadderGroup = {
   address_count: number;
 };
 
+export type DatasetInfo = {
+  archived: boolean;
+  window_start: string | null;
+  window_end: string | null;
+  days: number;
+};
+
+export type AnalysisOverview = {
+  events: number;
+  addresses: number;
+  dataset: DatasetInfo;
+  sensors: SensorWindow[];
+};
+
 export type AnalysisReport = {
-  overview: { events: number; addresses: number; sensors: SensorWindow[] };
+  overview: AnalysisOverview;
   coordination: {
     multi_sensor_addresses: number;
     verdicts: Record<string, number>;

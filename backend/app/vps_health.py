@@ -10,6 +10,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from .database import SessionLocal
+from .config import settings
 from .models import Event, VpsSource
 
 log = logging.getLogger(__name__)
@@ -49,13 +50,42 @@ def effective_last_contact(db: Session, vps: VpsSource) -> datetime | None:
     return max(candidates) if candidates else None
 
 
+def dataset_now(db: Session) -> datetime | None:
+    """The newest event timestamp in the dataset: its 'now' for an archived capture."""
+    return db.execute(select(func.max(Event.occurred_at))).scalar_one_or_none()
+
+
 def vps_status(db: Session, vps: VpsSource) -> tuple[str, float | None]:
     """
-    Derive online | stale | offline:
+    Derive online | stale | offline.
+
+    Live mode, measured against wall clock:
       - online  — logs/heartbeat within 5 minutes
-      - stale   — quiet 5–30m OR honeypot URL reachable but not shipping logs
+      - stale   — quiet 5-30m OR honeypot URL reachable but not shipping logs
       - offline — no recent logs and honeypot unreachable (or no URL)
+
+    Archived-dataset mode (`DATASET_MODE=true`), measured against the newest event in
+    the dataset: a sensor still shipping at the end of the capture window reads online,
+    one that stopped partway reads stale or offline. That is a statement about the
+    capture, not a claim that anything is running now.
     """
+    if settings.dataset_mode:
+        # Compare like with like. effective_last_contact() prefers received_at, which
+        # is later than occurred_at, and mixing the two yields negative ages.
+        reference = dataset_now(db)
+        last = db.execute(
+            select(func.max(Event.occurred_at)).where(Event.vps_id == vps.id)
+        ).scalar_one_or_none()
+        if reference is None or last is None:
+            return "offline", None
+        age = (reference - last).total_seconds()
+        # Generous windows: a day of quiet inside a two-month capture is not a fault.
+        if age <= 86_400:
+            return "online", age
+        if age <= 604_800:
+            return "stale", age
+        return "offline", age
+
     now = datetime.now(timezone.utc)
     last = effective_last_contact(db, vps)
 

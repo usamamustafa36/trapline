@@ -1,4 +1,5 @@
 import type {
+  AnalysisOverview,
   AnalysisReport,
   Blocklist,
   SigmaRule,
@@ -67,6 +68,7 @@ export const api = {
 
   // Analysis and generated detection content.
   analysisReport: () => get<AnalysisReport>("/analysis/report"),
+  analysisOverview: () => get<AnalysisOverview>("/analysis/overview"),
   sigmaRules: () => get<{ count: number; rules: SigmaRule[] }>("/detections/sigma"),
   sigmaYamlUrl: () => `${BASE}/detections/sigma.yml`,
   blocklist: () => get<Blocklist>("/detections/blocklist"),

@@ -84,6 +84,14 @@ def main() -> None:
     # A deeper page of events so the reports view has something to work with.
     grab("/api/v1/events", {"page_size": 200})
 
+    # The reports view paginates at 50 and offers per-sensor scoping, so capture the
+    # first few pages at that size. Without these the view falls back to a 14-row
+    # page and the pager looks broken.
+    for page in (1, 2, 3):
+        grab("/api/v1/events", {"page_size": 50, "page": page})
+    for alias in aliases:
+        grab("/api/v1/events", {"page_size": 50, "page": 1, "vps": alias})
+
     cross = grab("/api/v1/ips/cross-vps", {"min_vps": 2}) or []
 
     # Every address in the dataset gets a profile, so drill-down always resolves.
