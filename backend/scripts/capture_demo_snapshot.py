@@ -27,6 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from fastapi.testclient import TestClient  # noqa: E402
 
+from app.config import settings  # noqa: E402
 from app.main import app  # noqa: E402
 
 WINDOWS = ["24h", "7d", "30d", "all"]
@@ -48,6 +49,19 @@ def key_for(path: str, params: dict[str, object] | None = None) -> str:
 
 
 def main() -> None:
+    # This script runs the app in-process, so it reads DATASET_MODE from its own
+    # environment, not from whatever a separate uvicorn was started with. Getting that
+    # wrong once shipped a console that reported two of three sensors "offline" and
+    # dropped the archived-dataset banner, which is the console claiming to be live.
+    # Refuse rather than publish that.
+    if not settings.dataset_mode:
+        sys.exit(
+            "DATASET_MODE is not set for this process.\n"
+            "Without it the snapshot computes sensor status against the wall clock, so an\n"
+            "archive looks like a dead live feed and the archived-dataset banner is absent.\n"
+            "Re-run as: DATASET_MODE=true python scripts/capture_demo_snapshot.py"
+        )
+
     out = Path(os.environ.get("SNAPSHOT_OUT", DEFAULT_OUT))
     client = TestClient(app)
     snapshot: dict[str, object] = {}
