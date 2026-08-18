@@ -63,7 +63,7 @@ export default function AnalysisPage() {
 
       {/* Deployment reality, stated up front so nothing is overclaimed. */}
       <Panel title="Deployment" icon={<Globe className="h-4 w-4" />}>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {r.overview.sensors.map((s) => (
             <div
               key={s.alias}
@@ -82,7 +82,7 @@ export default function AnalysisPage() {
         </div>
       </Panel>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <KpiTile label="Events" value={fmtInt(r.overview.events)} />
         <KpiTile label="Source addresses" value={fmtInt(r.overview.addresses)} />
         <KpiTile
@@ -153,7 +153,7 @@ export default function AnalysisPage() {
         </div>
       </Panel>
 
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
         {/* Client fingerprints: the human-presence signal. */}
         <Panel
           title="Client fingerprints"
@@ -286,7 +286,7 @@ export default function AnalysisPage() {
         </div>
       </Panel>
 
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
         {/* Rhythm. */}
         <Panel title="Activity rhythm (UTC)" icon={<Clock className="h-4 w-4" />} sub={r.rhythm.reading}>
           <div className="flex h-28 items-end gap-[3px]">

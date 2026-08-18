@@ -62,7 +62,7 @@ export default function DetectionsPage() {
         icon={<ShieldAlert className="h-4 w-4" />}
         sub="Rules and indicators derived from what the sensors actually observed. Trapline is not a SIEM: it produces detection content for one"
       >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <KpiTile label="Sigma rules" value={fmtInt(rules.data.count)} sub="deployable" />
           <KpiTile
             label="Critical / high"
@@ -165,7 +165,7 @@ export default function DetectionsPage() {
                         </a>
                       ))}
                     </div>
-                    <div className="mt-3 grid gap-3 lg:grid-cols-2">
+                    <div className="mt-3 grid grid-cols-1 gap-3 lg:grid-cols-2">
                       <div>
                         <div className="hud-label mb-1">Detection</div>
                         <pre className="max-h-52 overflow-auto whitespace-pre-wrap break-all rounded bg-black/40 p-2 font-mono text-[10.5px] leading-relaxed text-muted">
