@@ -219,9 +219,10 @@ export default function IpProfilePage() {
             ) : (
               <div className="py-6 text-center">
                 <ShieldAlert className="mx-auto mb-2 h-6 w-6 text-muted" />
-                <p className="hud-label">No OTX record</p>
-                <p className="mt-1 font-mono text-[10px] text-muted">
-                  Indicator not yet enriched by the OTX worker.
+                <p className="hud-label">No reputation record</p>
+                <p className="mt-1 font-mono text-[10px] leading-relaxed text-muted">
+                  Reputation is ingested from sensor-side OTX verdicts. This dataset
+                  carries none, so the indicator is unenriched.
                 </p>
               </div>
             )}
