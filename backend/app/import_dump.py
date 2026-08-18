@@ -33,10 +33,18 @@ import uuid
 from datetime import datetime
 from pathlib import Path
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, text
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 
 from .database import Base, SessionLocal, engine
+from .sanitise import IP_MAP, ORG_PATTERNS, scrub_text
+
+# Cheap pre-filter: most records carry no identifier, and skipping the
+# substitution pass for those is worth roughly a third of import time.
+_DIRTY = re.compile(
+    "|".join([re.escape(ip) for ip in IP_MAP] + [p.pattern for p, _ in ORG_PATTERNS]),
+    re.I,
+)
 from .models import Event, IpRegistry, IpVpsSighting, VpsSource
 from .security import generate_api_key, hash_api_key
 
@@ -47,7 +55,7 @@ SENSOR_MAP = {
     "CSD": "SENSOR-03",
 }
 
-BATCH = 5_000
+BATCH = 25_000
 
 
 def _log(msg: str) -> None:
@@ -119,32 +127,86 @@ def _header_of(path: Path) -> tuple[dict, str]:
 
 
 def _iter_events(path: Path):
-    """Yield event dicts from the line-oriented `events` array."""
-    in_events = False
+    """
+    Yield event dicts from the `events` array, whichever way it was written.
+
+    Dumps are not consistent about this. Two of the three sensors wrote one record
+    per line; the third wrote all 8,056,869 records onto a single 1 GB line. A
+    line-oriented reader silently yields nothing on the second layout, which is
+    exactly how it failed, so this scans by brace depth instead and is indifferent
+    to where the newlines fall.
+
+    Only the `events` array is walked. String state is tracked so a brace inside
+    attacker-supplied text (which is common in payloads) cannot end a record early.
+    """
+    CHUNK = 1 << 22
+
     with path.open(encoding="utf-8") as fh:
-        for line in fh:
-            stripped = line.strip()
-            if not in_events:
-                if stripped.startswith('"events":'):
-                    in_events = True
-                    # The array may open on the same line with a record after it.
-                    tail = stripped.split("[", 1)[1] if "[" in stripped else ""
-                    if tail.strip().startswith("{"):
-                        candidate = tail.strip().rstrip(",").rstrip("]")
+        # Seek to the start of the events *array*. Matching a bare '"events":' is
+        # wrong: `row_counts` contains `"events": 8056869`, and splitting there lands
+        # in `vps_sources` instead, which parses as one record and then stops.
+        opener = re.compile(r'"events"\s*:\s*\[')
+        pending = ""
+        while True:
+            m = opener.search(pending)
+            if m:
+                pending = pending[m.end():]
+                break
+            block = fh.read(CHUNK)
+            if not block:
+                return
+            # Overlap by enough to catch the pattern across a chunk boundary.
+            pending = pending[-64:] + block
+
+        depth = 0
+        in_str = False
+        esc = False
+        buf: list[str] = []
+
+        while True:
+            for ch in pending:
+                if depth == 0:
+                    if ch == "{":
+                        depth = 1
+                        buf = ["{"]
+                    elif ch == "]":
+                        return
+                    continue
+
+                buf.append(ch)
+                if in_str:
+                    if esc:
+                        esc = False
+                    elif ch == "\\":
+                        esc = True
+                    elif ch == '"':
+                        in_str = False
+                    continue
+                if ch == '"':
+                    in_str = True
+                elif ch == "{":
+                    depth += 1
+                elif ch == "}":
+                    depth -= 1
+                    if depth == 0:
                         try:
-                            yield json.loads(candidate)
+                            # Scrub before parsing. One regex pass over the record
+                            # text is markedly cheaper than walking the parsed dict,
+                            # and putting it at the single choke point every record
+                            # passes through means no unsanitised record is ever
+                            # constructed at all. Replacements are alphanumeric and
+                            # dotted, so they cannot disturb JSON escaping.
+                            text = "".join(buf)
+                            if _DIRTY.search(text):
+                                text = scrub_text(text)
+                            yield json.loads(text)
                         except json.JSONDecodeError:
                             pass
-                continue
-            if stripped in ("]", "]}", "],"):
-                break
-            candidate = stripped.rstrip(",").rstrip("]")
-            if not candidate.startswith("{"):
-                continue
-            try:
-                yield json.loads(candidate)
-            except json.JSONDecodeError:
-                continue
+                        buf = []
+
+            pending = fh.read(CHUNK)
+            if not pending:
+                return
 
 
 def load(paths: list[Path], *, keep_aliases: bool) -> None:
@@ -153,6 +215,8 @@ def load(paths: list[Path], *, keep_aliases: bool) -> None:
     grand_total = 0
 
     with SessionLocal() as db:
+        _stage_prepare(db)
+
         for path in paths:
             meta, source_sensor = _header_of(path)
             if not source_sensor:
@@ -178,6 +242,7 @@ def load(paths: list[Path], *, keep_aliases: bool) -> None:
 
             batch: list[dict] = []
             seen = 0
+            staged = 0
             for record in _iter_events(path):
                 occurred = _parse_ts(record.get("occurred_at"))
                 if occurred is None or not record.get("src_ip"):
@@ -226,16 +291,18 @@ def load(paths: list[Path], *, keep_aliases: bool) -> None:
 
                 if len(batch) >= BATCH:
                     _flush(db, batch)
-                    grand_total += len(batch)
+                    staged += len(batch)
                     batch.clear()
-                    if seen % 25_000 == 0:
-                        _log(f"  ... {seen:,} read")
+                    _log(f"  ... {seen:,} read")
 
             if batch:
                 _flush(db, batch)
-                grand_total += len(batch)
+                staged += len(batch)
             db.commit()
-            _log(f"  {path.name}: {seen:,} event(s) processed")
+            _log(f"  {path.name}: {seen:,} read, {staged:,} staged; de-duplicating ...")
+            inserted = _stage_commit(db)
+            grand_total += inserted
+            _log(f"  {path.name}: {inserted:,} new event(s) inserted")
 
         _log("rebuilding IP registry and cross-sensor sightings ...")
         _rebuild_derived(db)
@@ -252,10 +319,71 @@ def load(paths: list[Path], *, keep_aliases: bool) -> None:
     )
 
 
+STAGE_DDL = """
+create unlogged table if not exists events_stage (
+    event_uuid uuid, vps_id uuid, occurred_at timestamptz, src_ip inet,
+    dst_port integer, protocol text, event_type text, severity integer,
+    username_tried text, password_tried text, payload_excerpt text,
+    country_code text, raw_payload text
+)
+"""
+STAGE_COLS = (
+    "event_uuid", "vps_id", "occurred_at", "src_ip", "dst_port", "protocol",
+    "event_type", "severity", "username_tried", "password_tried",
+    "payload_excerpt", "country_code", "raw_payload",
+)
+
+
+def _stage_prepare(db) -> None:
+    db.execute(text(STAGE_DDL))
+    db.execute(text("truncate events_stage"))
+    db.commit()
+
+
 def _flush(db, batch: list[dict]) -> None:
-    """Insert a batch, ignoring rows already present (idempotent re-import)."""
-    stmt = pg_insert(Event.__table__).values(batch)
-    db.execute(stmt.on_conflict_do_nothing(index_elements=["event_uuid"]))
+    """
+    Stream a batch into the staging table with COPY.
+
+    A multi-row INSERT ... ON CONFLICT held around 300 rows/s on the eight-million
+    row dump, which is roughly eight hours. COPY into an unlogged staging table and a
+    single de-duplicating INSERT at the end does the same work without the per-row
+    conflict check, and `raw_payload` is staged as text so COPY needs no JSON
+    adaptation.
+    """
+    raw_conn = db.connection().connection
+    cols = ", ".join(STAGE_COLS)
+    with raw_conn.cursor().copy(f"copy events_stage ({cols}) from stdin") as cp:
+        for row in batch:
+            payload = row["raw_payload"]
+            cp.write_row(
+                tuple(
+                    json.dumps(payload) if key == "raw_payload" else row[key]
+                    for key in STAGE_COLS
+                )
+            )
+
+
+def _stage_commit(db) -> int:
+    """
+    Move staged rows into `events`, dropping duplicates.
+
+    `distinct on (event_uuid)` handles duplicates *within* the dump; the conflict
+    clause handles rows already present from an earlier run. Both matter, because
+    re-importing a dump has to stay idempotent.
+    """
+    cols = ", ".join(c for c in STAGE_COLS)
+    result = db.execute(
+        text(
+            f"insert into events ({cols}) "
+            f"select distinct on (event_uuid) {', '.join(c if c != 'raw_payload' else 'raw_payload::jsonb' for c in STAGE_COLS)} "
+            "from events_stage where event_uuid is not null "
+            "on conflict (event_uuid) do nothing"
+        )
+    )
+    db.commit()
+    db.execute(text("truncate events_stage"))
+    db.commit()
+    return result.rowcount or 0
 
 
 def _rebuild_derived(db) -> None:
