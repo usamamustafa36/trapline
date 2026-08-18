@@ -165,11 +165,17 @@ export default function AnalysisPage() {
               .sort((a, b) => b[1].events - a[1].events)
               .map(([name, b]) => (
                 <div key={name}>
-                  <div className="flex items-baseline justify-between font-mono text-[12px]">
-                    <span className={name.startsWith("interactive") ? "text-alert" : "text-dim"}>
+                  <div className="flex items-baseline justify-between gap-2 font-mono text-[12px]">
+                    <span
+                      className={cn(
+                        "min-w-0 truncate",
+                        name.startsWith("interactive") ? "text-alert" : "text-dim",
+                      )}
+                      title={name}
+                    >
                       {name}
                     </span>
-                    <span className="text-muted">
+                    <span className="shrink-0 text-muted">
                       {b.share}% · {fmtInt(b.addresses)} addrs
                     </span>
                   </div>
@@ -185,11 +191,14 @@ export default function AnalysisPage() {
                 </div>
               ))}
           </div>
+          <div className="overflow-x-auto">
           <table className="w-full text-left font-mono text-[11.5px]">
             <tbody>
               {r.clients.clients.slice(0, 9).map((c) => (
                 <tr key={c.client} className="border-b border-white/[0.03]">
-                  <td className="py-1.5 pr-2 text-fg">{c.client.replace("SSH-2.0-", "")}</td>
+                  <td className="max-w-[220px] break-all py-1.5 pr-2 text-fg">
+                    {c.client.replace("SSH-2.0-", "")}
+                  </td>
                   <td className="py-1.5 pr-2 text-right text-signal">{fmtInt(c.events)}</td>
                   <td className="py-1.5 text-[10px] text-muted">
                     {c.bucket.startsWith("interactive") ? "human" : c.bucket.startsWith("automation") ? "script" : "—"}
@@ -198,6 +207,7 @@ export default function AnalysisPage() {
               ))}
             </tbody>
           </table>
+          </div>
         </Panel>
 
         {/* Credential ladders: tool attribution from wordlist order. */}
@@ -315,6 +325,7 @@ export default function AnalysisPage() {
           icon={<KeyRound className="h-4 w-4" />}
           sub="Separated by account-to-password fan-out, which is what distinguishes the T1110 sub-techniques"
         >
+          <div className="overflow-x-auto">
           <table className="w-full text-left font-mono text-[12px]">
             <tbody>
               {Object.entries(r.guessing.styles)
@@ -327,17 +338,22 @@ export default function AnalysisPage() {
                 ))}
             </tbody>
           </table>
+          </div>
           <div className="mt-3 hud-label">Most requested HTTP paths</div>
+          <div className="overflow-x-auto">
           <table className="mt-1 w-full text-left font-mono text-[11.5px]">
             <tbody>
               {r.http.top_paths.slice(0, 6).map((p) => (
                 <tr key={p.uri} className="border-b border-white/[0.03]">
-                  <td className="py-1.5 truncate pr-2 text-fg">{p.uri}</td>
+                  <td className="max-w-[240px] truncate py-1.5 pr-2 text-fg" title={p.uri}>
+                    {p.uri}
+                  </td>
                   <td className="py-1.5 text-right text-signal">{fmtInt(p.count)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
+          </div>
         </Panel>
       </div>
     </div>

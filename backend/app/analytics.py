@@ -44,7 +44,7 @@ from dataclasses import dataclass, field
 from datetime import timedelta
 from typing import Any
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, text
 from sqlalchemy.orm import Session
 
 from .config import settings
@@ -54,6 +54,16 @@ from .models import Event, VpsSource
 # ── Tunables, stated rather than buried ─────────────────────────────────────────
 
 #: Inter-sensor gap at or below which arrivals count as one coordinated burst.
+# Commands are matched and grouped on their first N characters. Rule patterns all
+# anchor near the start, and attacker commands run to 51 KB, so scanning the whole
+# string buys nothing and costs a great deal.
+MATCH_WINDOW = 240
+
+# Protocols where the `Command` field holds a shell command. On `tcp` it holds raw
+# protocol negotiation instead, which is not an attacker command and must not be
+# counted as one.
+SHELL_PROTOCOLS = ("ssh", "telnet")
+
 COORDINATED_WINDOW = timedelta(hours=24)
 #: Gap at or above which repeat sightings are treated as unrelated background scanning.
 BACKGROUND_GAP = timedelta(days=14)
@@ -130,6 +140,12 @@ COMMAND_RULES: list[tuple[str, str, str, str]] = [
 ]
 
 _COMPILED = [(re.compile(p, re.I), phase, tech, label) for p, phase, tech, label in COMMAND_RULES]
+
+
+# One alternation over every rule, used only to decide whether a command is worth
+# running the individual rules against. Built from COMMAND_RULES so a new rule is
+# covered automatically.
+_ANY_RULE = re.compile("|".join(f"(?:{pattern})" for pattern, *_ in COMMAND_RULES), re.I)
 
 
 def classify_command(cmd: str) -> tuple[str, str, str] | None:
@@ -247,6 +263,19 @@ def client_fingerprints(db: Session) -> dict[str, Any]:
     return {"buckets": dict(grouped), "clients": listing[:40], "total_events": total}
 
 
+def _top_values(db: Session, column, limit: int = 20) -> list[tuple[str, int]]:
+    """Top N values of a column by frequency, counted in the database."""
+    rows = db.execute(
+        select(column, func.count(Event.id))
+        .where(column.isnot(None))
+        .where(column != "")
+        .group_by(column)
+        .order_by(func.count(Event.id).desc())
+        .limit(limit)
+    ).all()
+    return [(v, n) for v, n in rows]
+
+
 def credential_ladders(db: Session, *, min_len: int = 4, limit: int = 25) -> dict[str, Any]:
     """
     Extract the ordered password sequence per source, then find shared ladders.
@@ -255,19 +284,38 @@ def credential_ladders(db: Session, *, min_len: int = 4, limit: int = 25) -> dic
     in the same order means the same software, which is a far stronger attribution
     signal than a shared single credential.
     """
+    # Only the first `cap` passwords per source are ever used as the signature, so
+    # the truncation happens in the database. Pulling every credential row back to
+    # do it here cost 2.9 million rows once the third sensor landed.
+    cap = 25
     rows = db.execute(
-        select(Event.src_ip, Event.username_tried, Event.password_tried, Event.occurred_at)
-        .where(Event.password_tried.isnot(None))
-        .where(Event.password_tried != "")
-        .order_by(Event.src_ip, Event.occurred_at)
+        text(
+            """
+            with ranked as (
+                select src_ip, username_tried, password_tried,
+                       row_number() over (partition by src_ip order by occurred_at) as rn
+                  from events
+                 where password_tried is not null and password_tried <> ''
+            )
+            select src_ip,
+                   count(*) as total,
+                   array_agg(password_tried order by rn) filter (where rn <= :cap) as pwds,
+                   array_agg(distinct username_tried) filter (where username_tried is not null) as users
+              from ranked
+             group by src_ip
+            """
+        ),
+        {"cap": cap},
     ).all()
 
-    ladders: dict[str, list[str]] = defaultdict(list)
-    users: dict[str, set[str]] = defaultdict(set)
-    for ip, user, pwd, _ts in rows:
-        ladders[str(ip)].append(pwd)
-        if user:
-            users[str(ip)].add(user)
+    ladders: dict[str, list[str]] = {}
+    users: dict[str, set[str]] = {}
+    for ip, total, pwds, unames in rows:
+        ladders[str(ip)] = list(pwds or [])
+        # `total` is the untruncated length, which is what the min_len test needs.
+        if total < min_len:
+            ladders[str(ip)] = []
+        users[str(ip)] = set(unames or [])
 
     # Signature = the ordered ladder, capped so one long session does not dominate.
     signatures: dict[tuple[str, ...], list[str]] = defaultdict(list)
@@ -292,8 +340,8 @@ def credential_ladders(db: Session, *, min_len: int = 4, limit: int = 25) -> dic
         "sources_with_ladders": len(signatures),
         "shared_ladder_groups": len(shared),
         "groups": shared[:limit],
-        "top_passwords": Counter(r[2] for r in rows).most_common(20),
-        "top_usernames": Counter(r[1] for r in rows if r[1]).most_common(20),
+        "top_passwords": _top_values(db, Event.password_tried),
+        "top_usernames": _top_values(db, Event.username_tried),
     }
 
 
@@ -346,35 +394,86 @@ def guessing_style(db: Session, *, limit: int = 25) -> dict[str, Any]:
     return {"styles": dict(styles), "sources": detail[:limit]}
 
 
+def _sources_per_phase(db: Session, commands_by_phase: dict[str, list[str]]) -> dict[str, int]:
+    """
+    Distinct source count for every phase, in one pass.
+
+    Doing this per phase meant nine sequential scans of the events table with a JSONB
+    extraction each, which measured 58s once the third sensor was loaded. Joining the
+    command-to-phase mapping in as an array instead does it in one scan. Counting
+    distinct across the whole phase also avoids double counting an address that ran
+    two commands in the same phase.
+    """
+    pairs = [(cmd, phase) for phase, cmds in commands_by_phase.items() for cmd in cmds]
+    if not pairs:
+        return {}
+    cmds, phases = zip(*pairs)
+    rows = db.execute(
+        text(
+            """
+            with m(cmd, phase) as (
+                select * from unnest(cast(:cmds as text[]), cast(:phases as text[]))
+            )
+            select m.phase, count(distinct e.src_ip) as n
+              from events e
+              join m on m.cmd = left(e.raw_payload->>'Command', :window)
+             where e.protocol = any(cast(:protos as text[]))
+             group by m.phase
+            """
+        ),
+        {
+            "cmds": list(cmds),
+            "phases": list(phases),
+            "window": MATCH_WINDOW,
+            "protos": list(SHELL_PROTOCOLS),
+        },
+    ).all()
+    return {phase: n for phase, n in rows}
+
+
 def command_phases(db: Session) -> dict[str, Any]:
     """Map observed commands onto lifecycle phases and ATT&CK techniques."""
+    # Grouping by (command, source) produced a row per pair, which is millions once
+    # a busy sensor is loaded. Distinct commands are far fewer than distinct pairs
+    # because botnets reuse the same scripts, so group by command alone and resolve
+    # per-phase source counts afterwards with one query per phase.
+    # Restricted to shell protocols, which is a correctness fix before it is a speed one.
+    #
+    # One sensor writes raw protocol negotiation into the same `Command` field: SMB
+    # dialect strings, `RFB 003.003` from VNC, RDP cookies. That is 720,054 of the
+    # 742,908 events carrying the field, and 259,240 of the 259,953 distinct values.
+    # Counting those as attacker commands overstated the total by thirty-three times
+    # and left the classified share looking like 3%. Filtering to shell protocols
+    # leaves 713 distinct commands, so the rule pass is no longer the slow step either.
+    prefix = func.left(Event.raw_payload["Command"].astext, MATCH_WINDOW).label("cmd")
     rows = db.execute(
-        select(
-            Event.raw_payload["Command"].astext.label("cmd"),
-            Event.src_ip,
-            func.count(Event.id).label("n"),
-        )
+        select(prefix, func.count(Event.id).label("n"))
+        .where(Event.protocol.in_(SHELL_PROTOCOLS))
         .where(Event.raw_payload["Command"].astext.isnot(None))
         .where(Event.raw_payload["Command"].astext != "")
-        .group_by("cmd", Event.src_ip)
+        .group_by(prefix)
     ).all()
 
     phases: dict[str, Finding] = {}
     techniques: Counter[str] = Counter()
     unmatched: Counter[str] = Counter()
     label_totals: dict[str, Counter] = defaultdict(Counter)
-    total = 0
-    sources_by_phase: dict[str, set[str]] = defaultdict(set)
+    commands_by_phase: dict[str, list[str]] = defaultdict(list)
 
-    for cmd, ip, n in rows:
+    total = 0
+    for cmd, n in rows:
         total += n
+        if not _ANY_RULE.search(cmd):
+            unmatched[cmd[:90]] += n
+            continue
         hit = classify_command(cmd)
         if hit is None:
+            # Matched the coarse SQL filter but no exact rule. Rare, and worth seeing.
             unmatched[cmd[:90]] += n
             continue
         phase, tech, label = hit
         techniques[tech] += n
-        sources_by_phase[phase].add(str(ip))
+        commands_by_phase[phase].append(cmd)
         f = phases.get(phase)
         if f is None:
             f = phases[phase] = Finding(label=phase, detail=label, count=0, attack=tech)
@@ -383,6 +482,8 @@ def command_phases(db: Session) -> dict[str, Any]:
         label_totals[phase][(tech, label)] += n
         if len(f.evidence) < 12 and cmd[:110] not in f.evidence:
             f.evidence.append(cmd[:110])
+
+    sources_by_phase = _sources_per_phase(db, commands_by_phase)
 
     ordered = [
         "Profile host", "Escalate", "Prepare host", "Fetch payload",
@@ -396,7 +497,7 @@ def command_phases(db: Session) -> dict[str, Any]:
                 (top_tech, top_label), _ = label_totals[name].most_common(1)[0]
                 f.attack, f.detail = top_tech, top_label
             d = f.as_dict()
-            d["sources"] = len(sources_by_phase[name])
+            d["sources"] = sources_by_phase.get(name, 0)
             d["techniques"] = [
                 {"attck": t, "label": lab, "count": c}
                 for (t, lab), c in label_totals[name].most_common()
