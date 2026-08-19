@@ -18,6 +18,7 @@ import { STATUS_COLOR } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 import { StatusDot } from "@/components/ui/StatusDot";
 import { ProjectLogo, VpsLogo } from "@/components/ui/VpsLogo";
+import { SignOut } from "@/components/shell/SignOut";
 
 const NAV = [
   { href: "/", label: "Overwatch", sub: "Aggregate", icon: Radar },
@@ -134,6 +135,7 @@ export function Sidebar() {
             style={{ background: STATUS_COLOR.online, boxShadow: `0 0 8px ${STATUS_COLOR.online}` }}
           />
         </div>
+        <SignOut />
       </div>
     </aside>
   );
