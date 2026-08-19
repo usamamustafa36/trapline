@@ -6,18 +6,35 @@
  * fetchable and the password ends up in the client bundle. Middleware runs on the
  * server before either is reached, so the gate goes here instead.
  *
+ * TRAPLINE_PUBLIC=true removes the gate for a snapshot-only deployment. It is ignored
+ * whenever credentials are configured, so it cannot open a console serving live data.
+ * Note the flag and the credentials are both read at build time in the edge bundle, so
+ * changing either needs a redeploy, not just a dashboard edit.
+ *
  * Requires Next 14.2.25 or later. Earlier releases accept an `x-middleware-subrequest`
  * header that skips middleware entirely (CVE-2025-29927), which would make this
  * bypassable with one header. This project is on 14.2.35.
  */
 import { NextRequest, NextResponse } from "next/server";
 
-import { SESSION_COOKIE, authConfig, tokenIsValid } from "@/lib/session";
+import { SESSION_COOKIE, authConfig, publicMode, tokenIsValid } from "@/lib/session";
 
 const PUBLIC_PATHS = ["/login", "/api/auth/login", "/api/auth/logout"];
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Opted-in public deployment: no gate at all.
+  if (publicMode()) {
+    // A stale /login link would otherwise render a form that cannot succeed.
+    if (pathname === "/login") {
+      const home = request.nextUrl.clone();
+      home.pathname = "/";
+      home.search = "";
+      return NextResponse.redirect(home);
+    }
+    return NextResponse.next();
+  }
 
   if (PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`))) {
     return NextResponse.next();

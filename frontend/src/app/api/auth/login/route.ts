@@ -1,9 +1,20 @@
 import { NextResponse } from "next/server";
 
-import { SESSION_COOKIE, SESSION_MAX_AGE, authConfig, checkCredentials, issueToken } from "@/lib/session";
+import {
+  SESSION_COOKIE,
+  SESSION_MAX_AGE,
+  authConfig,
+  checkCredentials,
+  issueToken,
+  publicMode,
+} from "@/lib/session";
 
 /** Deliberately vague on failure: it never says which of the two was wrong. */
 export async function POST(request: Request): Promise<NextResponse> {
+  if (publicMode()) {
+    return NextResponse.json({ detail: "This deployment has no console gate." }, { status: 404 });
+  }
+
   if (!authConfig()) {
     return NextResponse.json(
       { detail: "Console gate is not configured on this deployment." },

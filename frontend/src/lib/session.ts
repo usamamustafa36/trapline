@@ -42,6 +42,28 @@ function constantTimeEqual(a: string, b: string): boolean {
   return diff === 0;
 }
 
+/**
+ * Public demo mode.
+ *
+ * The published console serves a captured, sanitised snapshot, so there is nothing
+ * behind the gate worth gating. Setting TRAPLINE_PUBLIC=true opens it.
+ *
+ * Deliberately conjunctive with the credentials being absent: if someone configures a
+ * user and password, the gate stays up whatever this flag says. That way a deployment
+ * carrying live sensor data cannot be opened by setting one stray variable, and the
+ * fail-closed default below is preserved for every deployment that does not opt in.
+ */
+export function publicMode(): boolean {
+  return process.env.TRAPLINE_PUBLIC === "true" && !isConfigured();
+}
+
+/** Credentials present and complete. Kept separate so publicMode can ask without recursion. */
+function isConfigured(): boolean {
+  return Boolean(
+    process.env.TRAPLINE_USER && process.env.TRAPLINE_PASSWORD && process.env.TRAPLINE_AUTH_SECRET,
+  );
+}
+
 export function authConfig(): { user: string; password: string; secret: string } | null {
   const user = process.env.TRAPLINE_USER;
   const password = process.env.TRAPLINE_PASSWORD;
