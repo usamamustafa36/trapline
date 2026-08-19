@@ -7,12 +7,17 @@ working file downloads. Exits non-zero if anything fails, so it can gate a deplo
 
     python qa.py [base_url]
 """
+import os
 import re
 import sys
 
 from playwright.sync_api import sync_playwright
 
 BASE = (sys.argv[1] if len(sys.argv) > 1 else "https://trapline-console.vercel.app").rstrip("/")
+
+# The console is gated, so the sweep signs in first and reuses the session for every
+# page and download. Without this every route would just report the login redirect.
+AUTH_LOGIN = {"user": os.environ.get("TRAPLINE_USER", ""), "password": os.environ.get("TRAPLINE_PASSWORD", "")}
 
 ROUTES = [
     "/", "/analysis", "/detections", "/reports",
@@ -64,8 +69,15 @@ def main() -> int:
 
     with sync_playwright() as p:
         browser = p.chromium.launch()
+        context_auth = browser.new_context()
+        signin = context_auth.request.post(BASE + "/api/auth/login", data=AUTH_LOGIN)
+        if signin.status != 200:
+            print(f"sign in failed: HTTP {signin.status}. Set TRAPLINE_USER / TRAPLINE_PASSWORD.")
+            return 1
+        state = context_auth.storage_state()
+        context_auth.close()
         for width, label in ((1500, "desktop"), (390, "mobile")):
-            page = browser.new_page(viewport={"width": width, "height": 1000})
+            page = browser.new_context(viewport={"width": width, "height": 1000}, storage_state=state).new_page()
             errors: list[str] = []
             failed: list[str] = []
             page.on("pageerror", lambda e: errors.append(str(e)[:160]))
@@ -109,7 +121,7 @@ def main() -> int:
 
         # Downloads and raw API payloads.
         print("\n=== downloads / API")
-        page = browser.new_page()
+        page = browser.new_context(storage_state=state).new_page()
         for path in DOWNLOADS:
             resp = page.request.get(BASE + path)
             body = resp.text()
